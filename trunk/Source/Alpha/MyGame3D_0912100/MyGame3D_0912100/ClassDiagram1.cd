@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="MyGame3D_0912100.Program" Collapsed="true">
-    <Position X="10" Y="0.5" Width="1.5" />
+    <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.GameEntity">
-    <Position X="2" Y="0.5" Width="1.5" />
+    <Position X="3.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameEntity.cs</FileName>
@@ -36,42 +36,42 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.MyModel">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+    <Position X="3.25" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MyModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.My3DModel">
-    <Position X="7.75" Y="2.25" Width="1.5" />
+    <Position X="3.25" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIQAAIADAAAAAgAggAIAAAAAAAAAAAAAhAAAAAAAAIA=</HashCode>
       <FileName>My3DModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.VisibleGameEntity" Collapsed="true">
-    <Position X="3.75" Y="2.25" Width="1.5" />
+    <Position X="5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAYAAAAACAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>VisibleGameEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.My3DGameCharacter">
-    <Position X="2.5" Y="4.25" Width="1.5" />
+    <Position X="2.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAIAAAAAAIA=</HashCode>
       <FileName>My3DGameCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.MainMenu">
-    <Position X="5" Y="4.5" Width="1.5" />
+    <Position X="5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQICAAAoAAAAgAAAAAAAAAAACAABQAAAAgAAAAEAAA=</HashCode>
       <FileName>MainMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.MyXNAButton">
-    <Position X="5" Y="6" Width="1.5" />
+    <Position X="7.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>MyXNAButton.cs</FileName>
