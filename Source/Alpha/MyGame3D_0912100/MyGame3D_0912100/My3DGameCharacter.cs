@@ -40,7 +40,7 @@ namespace MyGame3D_0912100
             }
         }
 
-        public override void Draw(GameTime gametime, GraphicsDevice graphicsDevice, Effect effect, Camera camera)
+        public override void Draw(GameTime gametime, GraphicsDevice graphicsDevice, SpriteBatch spriteBatch, Effect effect, Camera camera)
         {
             this._Model.Draw(gametime, graphicsDevice, effect, camera);
         }

@@ -60,6 +60,7 @@ namespace MyGame3D_0912100
 
         private const string GOGETA = "Gogeta4\\untitled";
 
+        private MainMenu mainMenu = null;
 
         public MyGame()
         {
@@ -78,7 +79,10 @@ namespace MyGame3D_0912100
             // TODO: Add your initialization logic here
 
             base.Initialize();
+            graphics.PreferredBackBufferWidth = 620;
+            graphics.PreferredBackBufferHeight = 450;
             this.ASPECTRATIO = this.Window.ClientBounds.Width / this.Window.ClientBounds.Height;
+            graphics.ApplyChanges();
         }
 
         /// <summary>
@@ -91,6 +95,7 @@ namespace MyGame3D_0912100
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            mainMenu = new MainMenu(Content, ".\\Menu.xml");
 
             this._camera = new PerspectiveCamera(
                 this.CAMERAPOSITION,
@@ -131,8 +136,8 @@ namespace MyGame3D_0912100
             KeyboardState kbState = Keyboard.GetState();
             MouseState mouState = Mouse.GetState();
 
-
-            this.Knight.Update(gameTime, kbState, mouState);
+            mainMenu.Update(gameTime, kbState, mouState);
+            //this.Knight.Update(gameTime, kbState, mouState);
             
 
             base.Update(gameTime);
@@ -147,13 +152,10 @@ namespace MyGame3D_0912100
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
-
-
-            this.Knight.Draw(gameTime, GraphicsDevice, this._SkinnedEffect, this._camera);
-            
-
-
+            spriteBatch.Begin();
+            mainMenu.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
+            //this.Knight.Draw(gameTime, GraphicsDevice, spriteBatch, this._SkinnedEffect, this._camera);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
 
