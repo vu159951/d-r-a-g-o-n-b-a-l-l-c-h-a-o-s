@@ -114,6 +114,182 @@
       <Name>SkinedModelPipeline</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_18.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_18</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_19.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_19</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_20.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_20</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_21.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_21</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_22.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_22</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_23.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_23</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_24.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_24</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_25.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_25</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_26.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_26</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_27.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_27</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_28.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_28</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_29.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_30.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_30</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_31.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_31</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_32.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_32</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_33.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_33</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_34.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_34</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GokuSsj2\GokuSSj2.fbx">
+      <Name>GokuSSj2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>SkinnedModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainMenu\backgroundMenu00.jpg">
+      <Name>backgroundMenu00</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\MenuTitle100.png">
+      <Name>MenuTitle100</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\MenuTitle101.png">
+      <Name>MenuTitle101</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\MenuTitle102.png">
+      <Name>MenuTitle102</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\MenuTitle200.png">
+      <Name>MenuTitle200</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\MenuTitle201.png">
+      <Name>MenuTitle201</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\MenuTitle202.png">
+      <Name>MenuTitle202</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\MenuTitle300.png">
+      <Name>MenuTitle300</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\MenuTitle301.png">
+      <Name>MenuTitle301</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\MenuTitle302.png">
+      <Name>MenuTitle302</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\MenuTitle400.png">
+      <Name>MenuTitle400</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\MenuTitle401.png">
+      <Name>MenuTitle401</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\MenuTitle402.png">
+      <Name>MenuTitle402</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\Title00.png">
+      <Name>Title00</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\Title01.png">
+      <Name>Title01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MainMenu\Title02.png">
+      <Name>Title02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
