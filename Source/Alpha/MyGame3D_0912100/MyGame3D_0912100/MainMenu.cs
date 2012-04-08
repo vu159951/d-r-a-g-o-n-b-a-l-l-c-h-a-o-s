@@ -254,10 +254,12 @@ namespace MyGame3D_0912100
 
         public override void Draw(GameTime gameTime, GraphicsDevice graphicsDevice, SpriteBatch spriteBatch, Effect effect, Camera camera)
         {
+            spriteBatch.Begin();
             for (int i = 0; i < _nSprite; i++)
                 _sprites[i].Draw(gameTime, spriteBatch);
-            for (int i = 0; i < _nButton; i++) _ButtonList[i].Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
-            ;
+            for (int i = 0; i < _nButton; i++)
+                _ButtonList[i].Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
+            spriteBatch.End();
         }
 
         override public void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)

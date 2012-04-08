@@ -150,10 +150,10 @@ namespace MyGame3D_0912100
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            spriteBatch.Begin();
+            //spriteBatch.Begin();
             //mainMenu.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
             this.Knight.Draw(gameTime, GraphicsDevice, spriteBatch, this._SkinnedEffect, this._camera);
-            spriteBatch.End();
+            //spriteBatch.End();
             base.Draw(gameTime);
         }
 
