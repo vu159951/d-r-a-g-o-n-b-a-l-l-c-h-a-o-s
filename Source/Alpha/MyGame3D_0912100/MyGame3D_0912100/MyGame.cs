@@ -57,9 +57,7 @@ namespace MyGame3D_0912100
         /// <summary>
         /// Const parameter
         /// </summary>
-
-        private const string GOGETA = "Gogeta4\\untitled";
-
+        /// 
         private MainMenu mainMenu = null;
 
         public MyGame()
@@ -109,7 +107,7 @@ namespace MyGame3D_0912100
 
             this._SkinnedEffect = new SkinnedEffect(GraphicsDevice);
 
-            this.Knight = new My3DGameCharacter(Content, GOGETA);
+            this.Knight = new GogetaSSJ4(Content);
 
         }
 
@@ -137,7 +135,7 @@ namespace MyGame3D_0912100
             MouseState mouState = Mouse.GetState();
 
             mainMenu.Update(gameTime, kbState, mouState);
-            //this.Knight.Update(gameTime, kbState, mouState);
+            this.Knight.Update(gameTime, kbState, mouState);
             
 
             base.Update(gameTime);
@@ -153,8 +151,8 @@ namespace MyGame3D_0912100
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            mainMenu.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
-            //this.Knight.Draw(gameTime, GraphicsDevice, spriteBatch, this._SkinnedEffect, this._camera);
+            //mainMenu.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
+            this.Knight.Draw(gameTime, GraphicsDevice, spriteBatch, this._SkinnedEffect, this._camera);
             spriteBatch.End();
             base.Draw(gameTime);
         }
