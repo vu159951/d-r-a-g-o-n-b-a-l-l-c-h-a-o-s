@@ -25,7 +25,6 @@ namespace MyGame3D_0912100
         /// Clip Name
         /// </summary>
         protected const string GROUND_IDLE = "G_Idle";
-        protected const string WALKING = "Walking";
 
         public override void Update(GameTime gametime, Microsoft.Xna.Framework.Input.KeyboardState kbstate, Microsoft.Xna.Framework.Input.MouseState moustate)
         {
