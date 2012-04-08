@@ -22,6 +22,7 @@ namespace MyGame3D_0912100
         List<MyXNAButton> _ButtonList;
         int _nButton;
         int _focusButton;
+        private bool _fros = false;
 
         private KeyboardState previousKbs;
 
@@ -260,26 +261,9 @@ namespace MyGame3D_0912100
             ;
         }
 
-        private bool _fros = false;
-
         override public void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)
         {
             int focusingButton = _focusButton;
-            //if (isFirstPress)
-            //{
-            //    previousKbs = kbs;
-            //    isFirstPress = false;
-            //}
-            //if (previousKbs != kbs)
-            //{
-            //    if (kbs.IsKeyDown(Keys.Down))
-            //    {
-            //        focusingButton = (++focusingButton) % _nButton;
-            //    }
-            //    previousKbs = kbs;
-            //    setFocusButton(focusingButton);
-            //}
-
             if(!this._fros && kbs.IsKeyDown(Keys.Down))
             {
                 focusingButton = (++focusingButton) % _nButton;
@@ -287,7 +271,16 @@ namespace MyGame3D_0912100
                 this._fros = true;
             }
 
-            else if(kbs.IsKeyUp(Keys.Down))
+            else if (!this._fros && kbs.IsKeyDown(Keys.Up))
+            {
+                --focusingButton;
+                if (focusingButton < 0)
+                    focusingButton = _nButton - 1;
+                setFocusButton(focusingButton);
+                this._fros = true;
+            }
+
+            else if(kbs.IsKeyUp(Keys.Up) && kbs.IsKeyUp(Keys.Down))
             {
                 this._fros = false;
             }
