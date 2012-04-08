@@ -102,8 +102,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gogeta4\untitled.fbx">
-      <Name>untitled</Name>
+    <Compile Include="Gogeta4\Gogeta4.fbx">
+      <Name>Gogeta4</Name>
       <Importer>FbxImporter</Importer>
       <Processor>SkinnedModelProcessor</Processor>
     </Compile>

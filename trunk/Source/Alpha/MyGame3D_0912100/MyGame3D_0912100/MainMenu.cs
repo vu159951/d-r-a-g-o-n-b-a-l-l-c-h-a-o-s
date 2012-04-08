@@ -46,7 +46,6 @@ namespace MyGame3D_0912100
             }
             catch (Exception e)
             {
-                System.Console.WriteLine(e.Message);
                 return;
             }
             //Load Background

@@ -73,7 +73,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera.cs" />
+    <Compile Include="FlyCharacter.cs" />
     <Compile Include="GameEntity.cs" />
+    <Compile Include="GogetaSSJ4.cs" />
+    <Compile Include="GokuSSJ2.cs" />
     <Compile Include="InvisibleGameEntity.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="My2DSprite.cs" />
@@ -85,6 +88,8 @@
     <Compile Include="PerspectiveCamera.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Stage.cs" />
+    <Compile Include="UnFlyableCharacter.cs" />
     <Compile Include="VisibleGameEntity.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +99,7 @@
     </Content>
     <Content Include="Menu.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
