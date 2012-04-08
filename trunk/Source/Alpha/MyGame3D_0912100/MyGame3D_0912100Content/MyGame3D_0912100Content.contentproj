@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{D5471CDA-03A1-4B31-81FB-59334FAD1255}</ProjectGuid>
+    <ProjectTypeGuids>{96E2B04D-8817-42c6-938A-82C39BA4D311};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
+    <OutputPath>bin\$(Platform)\$(Configuration)</OutputPath>
+    <ContentRootDirectory>Content</ContentRootDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>MyGame3D_0912100Content</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.EffectImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.FBXImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.TextureImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.XImporter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.AudioImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_18.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_18</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_19.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_19</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_20.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_20</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_21.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_21</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_22.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_22</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_23.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_23</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_24.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_24</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_25.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_25</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_26.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_26</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_27.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_27</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_28.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_28</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_29.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_30.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_30</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_31.png">
+      <Name>-s 1.0 -1.0 1.0 Dolphin.exe_Fri_Mar_25_02-50-25_2011_31</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gogeta4\untitled.fbx">
+      <Name>untitled</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>SkinnedModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SkinedModelPipeline\SkinedModelPipeline.csproj">
+      <Project>{0C95B3D2-AC28-4C7C-BE87-CBDF302F9409}</Project>
+      <Name>SkinedModelPipeline</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
+  <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
