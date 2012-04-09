@@ -108,9 +108,9 @@ namespace MyGame3D_0912100
         }
 
 
-        public void PlayClip(string ClipName)
+        public void PlayClip(string ClipName, bool haveLoop)
         {
-            this._AnimationPlayer.StartClip(this._ListAnimation[ClipName]);
+            this._AnimationPlayer.StartClip(this._ListAnimation[ClipName], haveLoop);
         }
     }
 }

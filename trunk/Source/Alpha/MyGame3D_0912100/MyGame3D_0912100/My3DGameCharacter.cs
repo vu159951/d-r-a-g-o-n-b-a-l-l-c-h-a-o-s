@@ -36,7 +36,7 @@ namespace MyGame3D_0912100
             }
             else if (kbstate.IsKeyDown(Keys.S))
             {
-                this._Model.PlayClip(GROUND_IDLE);
+                this._Model.PlayClip(GROUND_IDLE, true);
             }
         }
 
