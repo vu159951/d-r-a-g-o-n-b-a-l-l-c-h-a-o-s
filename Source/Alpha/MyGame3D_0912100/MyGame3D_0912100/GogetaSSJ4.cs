@@ -24,7 +24,7 @@ namespace MyGame3D_0912100
         public GogetaSSJ4(ContentManager content)
         {
             this._Model = new My3DModel(content, "Gogeta4/Gogeta4");
-            this._Model.PlayClip(GROUND_IDLE);
+            this._Model.PlayClip(GROUND_IDLE, true);
         }
 
 

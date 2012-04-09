@@ -39,6 +39,8 @@ namespace SkinnedModel
         // Backlink to the bind pose and skeleton hierarchy data.
         SkinningData skinningDataValue;
 
+        // Loop or no loop animation
+        bool loop = true;
 
         #endregion
 
@@ -62,7 +64,7 @@ namespace SkinnedModel
         /// <summary>
         /// Starts decoding the specified animation clip.
         /// </summary>
-        public void StartClip(AnimationClip clip)
+        public void StartClip(AnimationClip clip, bool haveloop)
         {
             if (clip == null)
                 throw new ArgumentNullException("clip");
@@ -70,6 +72,8 @@ namespace SkinnedModel
             currentClipValue = clip;
             currentTimeValue = TimeSpan.Zero;
             currentKeyframe = 0;
+
+            this.loop = haveloop;
 
             // Initialize bone transforms to the bind pose.
             skinningDataValue.BindPose.CopyTo(boneTransforms, 0);
@@ -113,8 +117,11 @@ namespace SkinnedModel
             // If the position moved backwards, reset the keyframe index.
             if (time < currentTimeValue)
             {
-                currentKeyframe = 0;
-                skinningDataValue.BindPose.CopyTo(boneTransforms, 0);
+                if (loop)
+                {
+                    currentKeyframe = 0;
+                    skinningDataValue.BindPose.CopyTo(boneTransforms, 0);
+                }
             }
 
             currentTimeValue = time;
