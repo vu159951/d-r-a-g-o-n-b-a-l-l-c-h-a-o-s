@@ -21,10 +21,11 @@ namespace MyGame3D_0912100
     {
         private string XmlString = "Gogeta.xml";
 
-        public GogetaSSJ4(ContentManager content)
+        public GogetaSSJ4(ContentManager content, Vector3 position)
         {
             this._Model = new My3DModel(content, "Gogeta4/Gogeta4");
             this._Model.PlayClip(GROUND_IDLE, true);
+            Position = position;
         }
 
 

@@ -19,9 +19,13 @@ namespace MyGame3D_0912100
 {
     public class GokuSSJ2 : FlyableCharacter
     {
-        public GokuSSJ2(ContentManager content)
-        { 
-        
+        private string XmlString = "GokuSSj2.xml";
+
+        public GokuSSJ2(ContentManager content, Vector3 position)
+        {
+            this._Model = new My3DModel(content, "GokuSSj2/GokuSSj2");
+            this._Model.PlayClip(GROUND_IDLE, true);
+            this.Position = position;
         }
 
     }

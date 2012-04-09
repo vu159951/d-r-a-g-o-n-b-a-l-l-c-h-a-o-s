@@ -22,26 +22,12 @@ namespace MyGame3D_0912100
             get { return _Scale; }
             set { _Scale = value; }
         }
-        private float _PositionX = 0;
+        private Vector3 _Position;
 
-        public float PositionX
+        public Vector3 Position
         {
-            get { return _PositionX; }
-            set { _PositionX = value; }
-        }
-        private float _PositionY = -50;
-
-        public float PositionY
-        {
-            get { return _PositionY; }
-            set { _PositionY = value; }
-        }
-        private float _PositionZ = 0;
-
-        public float PositionZ
-        {
-            get { return _PositionZ; }
-            set { _PositionZ = value; }
+            get { return _Position; }
+            set { _Position = value; }
         }
 
         public My3DModel(ContentManager content, string modelName)
@@ -87,7 +73,7 @@ namespace MyGame3D_0912100
                 foreach (SkinnedEffect eff in mesh.Effects)
                 {
                     eff.SetBoneTransforms(this._Bones);
-
+                    eff.World = Matrix.CreateTranslation(Position);
                     eff.View = camera.View;
                     eff.Projection = camera.Projection;
 

@@ -22,9 +22,9 @@ namespace MyGame3D_0912100
         /// <summary>
         /// Camera parameter
         /// </summary>
-        private Vector3 CAMERAPOSITION = new Vector3(0, -30, 20); //vị trí cam
-        private Vector3 CAMERATARGET = new Vector3(0, 0, 10); //nhìn tới điểm đó
-        private Vector3 CAMERAUPVECTOR = new Vector3(0, 1, 0);
+        private Vector3 CAMERAPOSITION = new Vector3(0, 0, 100); //vị trí cam
+        private Vector3 CAMERATARGET = new Vector3(0, 0, 0); //nhìn tới điểm đó
+        private Vector3 CAMERAUPVECTOR = Vector3.Up;
         private float NEARPLANEDISTANCE = 10;
         private float FARPLANEDISTANCE = 1000;
         private float FIELDOFVIEW = MathHelper.PiOver4;
@@ -51,8 +51,7 @@ namespace MyGame3D_0912100
         /// Game visible entity
         /// </summary>
 
-        private My3DGameCharacter Knight = null;
-
+        private Stage stage;
 
         /// <summary>
         /// Const parameter
@@ -80,6 +79,7 @@ namespace MyGame3D_0912100
             graphics.PreferredBackBufferWidth = 620;
             graphics.PreferredBackBufferHeight = 450;
             this.ASPECTRATIO = this.Window.ClientBounds.Width / this.Window.ClientBounds.Height;
+            stage = new Stage(Content, new GogetaSSJ4(Content, new Vector3(0,0,0)), new GokuSSJ2(Content, new Vector3(0,10,0)), null);
             graphics.ApplyChanges();
         }
 
@@ -107,8 +107,6 @@ namespace MyGame3D_0912100
 
             this._SkinnedEffect = new SkinnedEffect(GraphicsDevice);
 
-            this.Knight = new GogetaSSJ4(Content);
-
         }
 
         /// <summary>
@@ -134,9 +132,8 @@ namespace MyGame3D_0912100
             KeyboardState kbState = Keyboard.GetState();
             MouseState mouState = Mouse.GetState();
 
-            mainMenu.Update(gameTime, kbState, mouState);
-            this.Knight.Update(gameTime, kbState, mouState);
-            
+            stage.Update(gameTime, kbState, mouState);
+            //mainMenu.Update(gameTime, kbState, mouState);
 
             base.Update(gameTime);
         }
@@ -150,10 +147,11 @@ namespace MyGame3D_0912100
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            //this.Knight.Draw(gameTime, GraphicsDevice, spriteBatch, this._SkinnedEffect, this._camera);
             //spriteBatch.Begin();
             //mainMenu.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
-            this.Knight.Draw(gameTime, GraphicsDevice, spriteBatch, this._SkinnedEffect, this._camera);
             //spriteBatch.End();
+            stage.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
             base.Draw(gameTime);
         }
 
