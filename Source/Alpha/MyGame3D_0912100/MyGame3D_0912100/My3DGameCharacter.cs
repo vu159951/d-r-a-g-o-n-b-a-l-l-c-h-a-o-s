@@ -20,7 +20,16 @@ namespace MyGame3D_0912100
     public abstract class My3DGameCharacter : VisibleGameEntity
     {
         protected My3DModel _Model;
+        protected Vector3 _Position;
 
+        public Vector3 Position
+        {
+            get { return _Position; }
+            set { 
+                _Position = value;
+                _Model.Position = _Position;
+            }
+        }
         /// <summary>
         /// Clip Name
         /// </summary>

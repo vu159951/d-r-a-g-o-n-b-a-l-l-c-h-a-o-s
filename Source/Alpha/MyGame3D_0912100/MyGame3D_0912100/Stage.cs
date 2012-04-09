@@ -24,11 +24,25 @@ namespace MyGame3D_0912100
 
         //private MAP //chua co map :D
 
-        public Stage(ContentManager content, string PlayerCharName, string ComCharName, string MapName)
+        public Stage(ContentManager content, My3DGameCharacter playerCharacter, My3DGameCharacter computerCharacter, string MapName)
         {
-            
+            _PlayerCharacter = playerCharacter;
+            _ComputerCharacter = computerCharacter;
             //init map
         }
+
+        public override void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)
+        {
+            _PlayerCharacter.Update(gameTime, kbs, ms);
+            _ComputerCharacter.Update(gameTime, kbs, ms);
+        }
+
+        public override void Draw(GameTime gameTime, GraphicsDevice graphicsDevice, SpriteBatch spriteBatch, Effect effect, Camera camera)
+        {
+            _PlayerCharacter.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
+            _ComputerCharacter.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
+        }
+
 
     }
 }
