@@ -28,6 +28,13 @@ namespace MyGame3D_0912100
 
         private bool isFirstPress = true;
 
+        //event
+
+        public event EventHandler NewGame;
+        public event EventHandler Option;
+
+
+
         private void setFocusButton(int i)
         {
             if (i >= 0 && i < _nButton)
@@ -281,7 +288,30 @@ namespace MyGame3D_0912100
                 this._fros = true;
             }
 
-            else if(kbs.IsKeyUp(Keys.Up) && kbs.IsKeyUp(Keys.Down))
+            else if (!this._fros && kbs.IsKeyDown(Keys.Enter))
+            {
+                this._fros = true;
+
+                switch(focusingButton)
+                {
+                    case 0:
+                        {
+                            this.NewGame(this, null);
+                            break;
+                        }
+
+                    case 1:
+                        {
+                            this.Option(this, null);
+                            break;
+                        }
+
+                    default:
+                        break;
+                }
+            }
+
+            else if(kbs.IsKeyUp(Keys.Up) && kbs.IsKeyUp(Keys.Down) && kbs.IsKeyUp(Keys.Enter))
             {
                 this._fros = false;
             }
