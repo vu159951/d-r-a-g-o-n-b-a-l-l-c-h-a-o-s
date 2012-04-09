@@ -22,8 +22,8 @@ namespace MyGame3D_0912100
         /// <summary>
         /// Camera parameter
         /// </summary>
-        private Vector3 CAMERAPOSITION = new Vector3(0, 0, 100); //vị trí cam
-        private Vector3 CAMERATARGET = new Vector3(0, 0, 0); //nhìn tới điểm đó
+        private Vector3 CAMERAPOSITION = new Vector3(0, 30, 40); //vị trí cam
+        private Vector3 CAMERATARGET = new Vector3(0, 30, 0); //nhìn tới điểm đó
         private Vector3 CAMERAUPVECTOR = Vector3.Up;
         private float NEARPLANEDISTANCE = 10;
         private float FARPLANEDISTANCE = 1000;
@@ -43,6 +43,9 @@ namespace MyGame3D_0912100
         /// Game invisible entity
         /// </summary>
 
+        private enum GAME_STATE {MAIN_MENU, CHOOSE_STAGE_INFO, PLAYING, OPTION};
+        private GAME_STATE _GameState;
+
         private Camera _camera;
         //private BasicEffect _basicEffect;
         private SkinnedEffect _SkinnedEffect;
@@ -56,7 +59,7 @@ namespace MyGame3D_0912100
         /// <summary>
         /// Const parameter
         /// </summary>
-        /// 
+
         private MainMenu mainMenu = null;
 
         public MyGame()
@@ -79,8 +82,27 @@ namespace MyGame3D_0912100
             graphics.PreferredBackBufferWidth = 620;
             graphics.PreferredBackBufferHeight = 450;
             this.ASPECTRATIO = this.Window.ClientBounds.Width / this.Window.ClientBounds.Height;
-            stage = new Stage(Content, new GogetaSSJ4(Content, new Vector3(0,0,0)), new GokuSSJ2(Content, new Vector3(0,10,0)), null);
+
+            this._GameState = GAME_STATE.MAIN_MENU;
+
+            this.mainMenu.NewGame += new EventHandler(mainMenu_NewGame);
+            this.mainMenu.Option += new EventHandler(mainMenu_Option);
+
+
+
             graphics.ApplyChanges();
+        }
+
+        void mainMenu_Option(object sender, EventArgs e)
+        {
+            //new cai menu
+            this._GameState = GAME_STATE.OPTION;
+        }
+
+        void mainMenu_NewGame(object sender, EventArgs e)
+        {
+            stage = new Stage(Content, new GogetaSSJ4(Content, new Vector3(0, 0, 0)), new GokuSSJ2(Content, new Vector3(0, 10, 0)), null);
+            this._GameState = GAME_STATE.PLAYING;
         }
 
         /// <summary>
@@ -132,8 +154,25 @@ namespace MyGame3D_0912100
             KeyboardState kbState = Keyboard.GetState();
             MouseState mouState = Mouse.GetState();
 
-            stage.Update(gameTime, kbState, mouState);
-            //mainMenu.Update(gameTime, kbState, mouState);
+            switch(this._GameState)
+            {
+                case GAME_STATE.MAIN_MENU:
+                    {
+                        mainMenu.Update(gameTime, kbState, mouState);
+                        break;
+                    }
+
+                case GAME_STATE.PLAYING:
+                    {
+                        stage.Update(gameTime, kbState, mouState);
+                        break;
+                    }
+
+                default:
+                    break;
+            }
+            
+            
 
             base.Update(gameTime);
         }
@@ -147,11 +186,26 @@ namespace MyGame3D_0912100
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            //this.Knight.Draw(gameTime, GraphicsDevice, spriteBatch, this._SkinnedEffect, this._camera);
-            //spriteBatch.Begin();
-            //mainMenu.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
-            //spriteBatch.End();
-            stage.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
+
+
+            switch (this._GameState)
+            {
+                case GAME_STATE.MAIN_MENU:
+                    {
+                        mainMenu.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
+                        break;
+                    }
+
+                case GAME_STATE.PLAYING:
+                    {
+                        stage.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
+                        break;
+                    }
+
+                default:
+                    break;
+            }
+
             base.Draw(gameTime);
         }
 
