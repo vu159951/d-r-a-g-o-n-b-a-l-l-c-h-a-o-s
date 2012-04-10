@@ -1,115 +1,143 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="MyGame3D_0912100.Program" Collapsed="true">
-    <Position X="9.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.GameEntity">
-    <Position X="3.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameEntity.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.InvisibleGameEntity">
-    <Position X="0.5" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>InvisibleGameEntity.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.Camera">
-    <Position X="0.5" Y="4" Width="1.5" />
+  <Class Name="MyGame3D_0912100.Camera" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAEAAAAIBAABAAAACAAAAEAAAABAAAAAAAAAAAQAgA=</HashCode>
       <FileName>Camera.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyGame3D_0912100.PerspectiveCamera">
-    <Position X="0.5" Y="8.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAIAAAAAAEAwAAAAAgAAAAAAACAAQQAAAAQAA=</HashCode>
-      <FileName>PerspectiveCamera.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.MyModel">
-    <Position X="7.5" Y="8.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MyModel.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.My3DModel">
-    <Position X="7.5" Y="10" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AIQAAIADAAAAAgAggAIAAAAAAAAAAAAAhAAAAAAAAIA=</HashCode>
-      <FileName>My3DModel.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.VisibleGameEntity" Collapsed="true">
-    <Position X="5" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAYAAAAACAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAI=</HashCode>
-      <FileName>VisibleGameEntity.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.My3DGameCharacter">
-    <Position X="2.75" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAggAAAAAAAAAAIAAAAAAAAAAAAAAAIA=</HashCode>
-      <FileName>My3DGameCharacter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.MainMenu">
-    <Position X="5" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQICAAAoAAAAgAAAAAAAAAAACAABQAAAAgAAAAEAAA=</HashCode>
-      <FileName>MainMenu.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.MyXNAButton">
-    <Position X="7.25" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAABAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
-      <FileName>MyXNAButton.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.Stage">
-    <Position X="9.5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Stage.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.GogetaSSJ4">
-    <Position X="5" Y="9.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GogetaSSJ4.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.FlyableCharacter">
-    <Position X="4.25" Y="8" Width="1.5" />
+  <Class Name="MyGame3D_0912100.FlyableCharacter" Collapsed="true">
+    <Position X="10.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FlyCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyGame3D_0912100.UnFlyableCharacter">
-    <Position X="2.25" Y="8" Width="1.5" />
+  <Class Name="MyGame3D_0912100.GameEntity" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.GogetaSSJ4" Collapsed="true">
+    <Position X="9.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GogetaSSJ4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.GokuSSJ2" Collapsed="true">
+    <Position X="11.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GokuSSJ2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.InvisibleGameEntity" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InvisibleGameEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.MainMenu" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQICAAAoAAAAgAAAAAACAAABCAABQAAAAgAAAAEAAA=</HashCode>
+      <FileName>MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.My2DSprite" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAAAQAAAgDkAAWAgAAQAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>My2DSprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.My3DGameCharacter" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgggAAAAgAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>My3DGameCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.My3DModel" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAAAAAAAAAgAggAIAgAAAAAAAAAAAhAAAAAAAAIA=</HashCode>
+      <FileName>My3DModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.MyGame" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAkEAAAACIA0AAAAAAAIAEABAAGAoQAQBEQCAAAAQ=</HashCode>
+      <FileName>MyGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.MyModel" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MyModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.MyXNAButton" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>MyXNAButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.PerspectiveCamera" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAIAAAAAAEAwAAAAAgAAAAAAACAAQQAAAAQAA=</HashCode>
+      <FileName>PerspectiveCamera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.Program" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.Stage" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIAAAAAAgAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.UnFlyableCharacter" Collapsed="true">
+    <Position X="14" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UnFlyableCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyGame3D_0912100.GokuSSJ2">
-    <Position X="3" Y="9.5" Width="1.5" />
+  <Class Name="MyGame3D_0912100.VisibleGameEntity" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAACAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>VisibleGameEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.MyVideoPlayer">
+    <Position X="13.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GokuSSJ2.cs</FileName>
+      <FileName>MyVideoPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.VideoFrame">
+    <Position X="14.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAACAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>VideoFrame.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -43,24 +43,27 @@ namespace MyGame3D_0912100
         /// Game invisible entity
         /// </summary>
 
-        private enum GAME_STATE {MAIN_MENU, CHOOSE_STAGE_INFO, PLAYING, OPTION};
+        private enum GAME_STATE {MAIN_MENU, CHOOSE_STAGE_INFO, PLAYING, OPTION, TRAILER};
         private GAME_STATE _GameState;
-
         private Camera _camera;
+
         //private BasicEffect _basicEffect;
         private SkinnedEffect _SkinnedEffect;
+
+        private VideoPlayer _VideoPlayer;
+        private Video _TrailerVideo;
+        private bool _TRAILERISPLAYING = false;
 
         /// <summary>
         /// Game visible entity
         /// </summary>
 
+        private MainMenu mainMenu = null;
         private Stage stage;
 
-        /// <summary>
-        /// Const parameter
-        /// </summary>
+        private VideoFrame _VideoFrame = new VideoFrame();
 
-        private MainMenu mainMenu = null;
+        
 
         public MyGame()
         {
@@ -83,11 +86,14 @@ namespace MyGame3D_0912100
             graphics.PreferredBackBufferHeight = 450;
             this.ASPECTRATIO = this.Window.ClientBounds.Width / this.Window.ClientBounds.Height;
 
-            this._GameState = GAME_STATE.MAIN_MENU;
+            this._GameState = GAME_STATE.TRAILER;
 
             this.mainMenu.NewGame += new EventHandler(mainMenu_NewGame);
             this.mainMenu.Option += new EventHandler(mainMenu_Option);
 
+            //Video
+            this._VideoPlayer = new VideoPlayer();
+            this._TrailerVideo = Content.Load<Video>("TrailerVideo\\Trailer");
 
 
             graphics.ApplyChanges();
@@ -102,7 +108,7 @@ namespace MyGame3D_0912100
         void mainMenu_NewGame(object sender, EventArgs e)
         {
             stage = new Stage(Content, new GogetaSSJ4(Content, new Vector3(0, 0, 0)), new GokuSSJ2(Content, new Vector3(0, 10, 0)), null);
-            this._GameState = GAME_STATE.PLAYING;
+            this._GameState = GAME_STATE.MAIN_MENU;
         }
 
         /// <summary>
@@ -156,6 +162,28 @@ namespace MyGame3D_0912100
 
             switch(this._GameState)
             {
+                case GAME_STATE.TRAILER:
+                    {
+                        if(!this._TRAILERISPLAYING)
+                        {
+                            if(this._VideoPlayer.State == MediaState.Stopped)
+                            {
+                                this._VideoPlayer.IsLooped = false;
+                                this._VideoPlayer.Play(this._TrailerVideo);
+                                this._TRAILERISPLAYING = true;
+                            }
+                        }
+                        else
+                        {
+                            if(this._VideoPlayer.State == MediaState.Stopped)
+                            {
+                                this._GameState = GAME_STATE.MAIN_MENU;
+                                Update(gameTime);
+                            }
+                        }
+                        break;
+                    }
+
                 case GAME_STATE.MAIN_MENU:
                     {
                         mainMenu.Update(gameTime, kbState, mouState);
@@ -190,6 +218,17 @@ namespace MyGame3D_0912100
 
             switch (this._GameState)
             {
+                case GAME_STATE.TRAILER:
+                    {
+                        if(this._VideoPlayer.State != MediaState.Stopped)
+                        {
+                            this._VideoFrame.UpdateFrame(_VideoPlayer,
+                                                            new Vector2(GraphicsDevice.Viewport.X, GraphicsDevice.Viewport.Y),
+                                                            new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height));
+                            this._VideoFrame.Draw(gameTime, GraphicsDevice, spriteBatch, null, _camera);
+                        }
+                        break;
+                    }
                 case GAME_STATE.MAIN_MENU:
                     {
                         mainMenu.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
