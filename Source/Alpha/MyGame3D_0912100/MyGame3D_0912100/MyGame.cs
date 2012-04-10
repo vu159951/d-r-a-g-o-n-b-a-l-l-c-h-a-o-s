@@ -63,6 +63,12 @@ namespace MyGame3D_0912100
 
         private MyVideoPlayer _MyVideoPlayer;
 
+
+        /// <summary>
+        /// Event
+        /// </summary>
+        public event EventHandler SkipTrailerEvent;
+
         
 
         public MyGame()
@@ -88,14 +94,25 @@ namespace MyGame3D_0912100
 
             this._GameState = GAME_STATE.TRAILER;
 
+            //Delegate
             this.mainMenu.NewGame += new EventHandler(mainMenu_NewGame);
             this.mainMenu.Option += new EventHandler(mainMenu_Option);
+            SkipTrailerEvent += new EventHandler(SkipTrailer);
+
 
             this._MyVideoPlayer = new MyVideoPlayer();
-            this._MyVideoPlayer.SetVideoToPlay("Trailer", Content);
+            this._MyVideoPlayer.SetVideoToPlay("TrailerVideo\\Trailer", Content);
 
 
             graphics.ApplyChanges();
+        }
+
+        void SkipTrailer(object sender, EventArgs e)
+        {
+            if(this._MyVideoPlayer.GetVideoPlayerState() == MediaState.Playing)
+            {
+                this._MyVideoPlayer.SetVideoPlayerState(MediaState.Stopped);
+            }
         }
 
         void mainMenu_Option(object sender, EventArgs e)
@@ -173,6 +190,12 @@ namespace MyGame3D_0912100
                         }
                         else
                         {
+
+                            if(kbState.IsKeyDown(Keys.Enter))
+                            {
+                                this.SkipTrailerEvent(this, null);
+                            }
+
                             if (this._MyVideoPlayer.GetVideoPlayerState() == MediaState.Stopped)
                             {
                                 this._GameState = GAME_STATE.MAIN_MENU;
