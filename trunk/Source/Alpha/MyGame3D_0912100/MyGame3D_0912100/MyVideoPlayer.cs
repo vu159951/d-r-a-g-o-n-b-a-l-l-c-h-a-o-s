@@ -23,6 +23,8 @@ namespace MyGame3D_0912100
         private Video _Video;
         private VideoFrame _VideoFrame = new VideoFrame();
 
+        
+
         public MyVideoPlayer()
         {
             this._VideoPlayer = new VideoPlayer();
@@ -31,7 +33,7 @@ namespace MyGame3D_0912100
         
         public void SetVideoToPlay(string name, ContentManager content)
         {
-            this._Video = content.Load<Video>("TrailerVideo\\Trailer");
+            this._Video = content.Load<Video>(name);
         }
 
         public void SetVolume(float volume)
@@ -48,7 +50,9 @@ namespace MyGame3D_0912100
                 this._VideoPlayer.Play(this._Video);
             }
         }
-        
+
+
+
         public override void  Draw(GameTime gameTime, GraphicsDevice graphicsDevice, SpriteBatch spriteBatch, Effect effect, Camera camera)
         {
             this._VideoFrame.UpdateFrame(_VideoPlayer,
@@ -62,6 +66,29 @@ namespace MyGame3D_0912100
         {
             return this._VideoPlayer.State;
         }
+
+        public void SetVideoPlayerState(MediaState state)
+        {
+            switch(state)
+            {
+                case MediaState.Paused:
+                    {
+                        this._VideoPlayer.Pause();
+                        break;
+                    }
+
+                case MediaState.Stopped:
+                    {
+                        this._VideoPlayer.Stop();
+                        break;
+                    }
+
+                default:
+                    break;
+            }
+        }
+
+
 
     }
 }
