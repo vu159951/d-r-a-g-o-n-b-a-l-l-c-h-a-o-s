@@ -50,8 +50,8 @@ namespace MyGame3D_0912100
         //private BasicEffect _basicEffect;
         private SkinnedEffect _SkinnedEffect;
 
-        private VideoPlayer _VideoPlayer;
-        private Video _TrailerVideo;
+        
+        
         private bool _TRAILERISPLAYING = false;
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace MyGame3D_0912100
         private MainMenu mainMenu = null;
         private Stage stage;
 
-        private VideoFrame _VideoFrame = new VideoFrame();
+        private MyVideoPlayer _MyVideoPlayer;
 
         
 
@@ -91,9 +91,8 @@ namespace MyGame3D_0912100
             this.mainMenu.NewGame += new EventHandler(mainMenu_NewGame);
             this.mainMenu.Option += new EventHandler(mainMenu_Option);
 
-            //Video
-            this._VideoPlayer = new VideoPlayer();
-            this._TrailerVideo = Content.Load<Video>("TrailerVideo\\Trailer");
+            this._MyVideoPlayer = new MyVideoPlayer();
+            this._MyVideoPlayer.SetVideoToPlay("Trailer", Content);
 
 
             graphics.ApplyChanges();
@@ -166,16 +165,15 @@ namespace MyGame3D_0912100
                     {
                         if(!this._TRAILERISPLAYING)
                         {
-                            if(this._VideoPlayer.State == MediaState.Stopped)
+                            if(this._MyVideoPlayer.GetVideoPlayerState() == MediaState.Stopped)
                             {
-                                this._VideoPlayer.IsLooped = false;
-                                this._VideoPlayer.Play(this._TrailerVideo);
+                                this._MyVideoPlayer.PlayVideo(false);
                                 this._TRAILERISPLAYING = true;
                             }
                         }
                         else
                         {
-                            if(this._VideoPlayer.State == MediaState.Stopped)
+                            if (this._MyVideoPlayer.GetVideoPlayerState() == MediaState.Stopped)
                             {
                                 this._GameState = GAME_STATE.MAIN_MENU;
                                 Update(gameTime);
@@ -220,12 +218,9 @@ namespace MyGame3D_0912100
             {
                 case GAME_STATE.TRAILER:
                     {
-                        if(this._VideoPlayer.State != MediaState.Stopped)
+                        if (this._MyVideoPlayer.GetVideoPlayerState() != MediaState.Stopped)
                         {
-                            this._VideoFrame.UpdateFrame(_VideoPlayer,
-                                                            new Vector2(GraphicsDevice.Viewport.X, GraphicsDevice.Viewport.Y),
-                                                            new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height));
-                            this._VideoFrame.Draw(gameTime, GraphicsDevice, spriteBatch, null, _camera);
+                            this._MyVideoPlayer.Draw(gameTime, GraphicsDevice, spriteBatch, null, _camera);
                         }
                         break;
                     }
