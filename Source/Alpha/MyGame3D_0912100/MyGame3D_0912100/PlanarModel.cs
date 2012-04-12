@@ -27,7 +27,7 @@ namespace MyGame3D_0912100
 
         private Effect MyEffect;
 
-        private bool isAnimate = true;
+        private bool isAnimate = false;
 
         private string EFFECT_NAME = "MyEffect";
 
@@ -109,6 +109,18 @@ namespace MyGame3D_0912100
             }
         }
 
+        public bool IsAnimate
+        {
+            get
+            {
+                return this.isAnimate;
+            }
+            set
+            {
+                this.isAnimate = value;
+            }
+        }
+
         public void InitMyPlanarModel(Vector3[] vertices, Vector2[] textureCordinate)
         {
             this._Vertices = new VertexPositionTexture[vertices.Length];
@@ -144,8 +156,8 @@ namespace MyGame3D_0912100
 
         public override void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)
         {
-            if(isAnimate)
-                this._Rotation = Matrix.CreateRotationY(MathHelper.ToRadians((float)gameTime.ElapsedGameTime.TotalMilliseconds));
+            if(this.IsAnimate)
+                this._Rotation = Matrix.CreateRotationY(MathHelper.ToRadians((float)gameTime.TotalGameTime.TotalMilliseconds / (float)gameTime.ElapsedGameTime.TotalMilliseconds));
         }
     }
 }

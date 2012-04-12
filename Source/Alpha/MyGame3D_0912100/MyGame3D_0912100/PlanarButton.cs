@@ -14,17 +14,28 @@ namespace MyGame3D_0912100
 {
     public class PlanarButton : PlanarEntity
     {
-       
+        private Matrix _Rotation;
 
         public PlanarButton(ContentManager content, String texture, Vector2 size, float scale, Vector3 position, Matrix rotation)
         {
             _planarModel = new PlanarModel(content, texture, size, scale, position, rotation);
             this.Position = position;
             this.Scale = scale;
-            this._isAnimate = false;
+            this.IsAnimate = false;
         }
 
-        
+        public Matrix Rotation
+        {
+            get
+            {
+                return this._Rotation;
+            }
+            set
+            {
+                this._Rotation = value;
+                this._planarModel.Rotation = value;
+            }
+        }
 
         public override void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)
         {

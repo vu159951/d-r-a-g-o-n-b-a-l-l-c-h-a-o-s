@@ -40,6 +40,7 @@ namespace MyGame3D_0912100
             if (i >= 0 && i < _nButton)
             {
                 _ButtonList[_focusButton].EnableAnimation(false);
+                _ButtonList[_focusButton].Rotation = Matrix.Identity;
                 _ButtonList[i].EnableAnimation(true);
                 _focusButton = i;
             }
@@ -52,12 +53,13 @@ namespace MyGame3D_0912100
             for(int i=0; i<textures.Length; i++)
             {
                 PlanarButton planarButtonTemp = new PlanarButton(content, texturePrefix + textures[i], new Vector2(320/2, 52/2), 1.0f, position[i], Matrix.Identity);
+                planarButtonTemp.EnableAnimation(false);
                 _ButtonList.Add(planarButtonTemp);
             }
             _nButton = _ButtonList.Count;
             this._MainMenuVideoPlayer = new MyVideoPlayer();
             this._MainMenuVideoPlayer.SetVideoToPlay("MainMenu\\Start", content);
-
+            _focusButton = 0;
         }
 
 
@@ -68,9 +70,6 @@ namespace MyGame3D_0912100
             {
                 this._MainMenuVideoPlayer.PlayVideo(true);
             }
-
-          
-
 
             int focusingButton = _focusButton;
             if(!this._fros && kbs.IsKeyDown(Keys.Down))
@@ -116,6 +115,8 @@ namespace MyGame3D_0912100
             {
                 this._fros = false;
             }
+            
+            this.setFocusButton(_focusButton);
 
             for (int i = 0; i < _nButton; i++)
                 _ButtonList[i].Update(gameTime, kbs, ms);

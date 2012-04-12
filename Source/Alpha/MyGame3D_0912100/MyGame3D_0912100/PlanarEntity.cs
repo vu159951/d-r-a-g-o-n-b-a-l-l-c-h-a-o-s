@@ -25,7 +25,7 @@ namespace MyGame3D_0912100
 
         protected float _Scale;
 
-        protected bool _isAnimate;
+        private bool _isAnimate;
 
         public Vector3 Position
         {
@@ -53,9 +53,22 @@ namespace MyGame3D_0912100
             }
         }
 
+        public bool IsAnimate
+        {
+            get
+            {
+                return this._isAnimate;
+            }
+            set
+            {
+                this._isAnimate = value;
+                this._planarModel.IsAnimate = this.IsAnimate;
+            }
+        }
+
         virtual public void EnableAnimation(bool p)
         {
-            this._isAnimate = p;
+            this.IsAnimate = p;
         }
     }
 }
