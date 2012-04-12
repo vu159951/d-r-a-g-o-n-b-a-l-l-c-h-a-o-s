@@ -88,8 +88,11 @@
     <Compile Include="MyVideoPlayer.cs" />
     <Compile Include="MyXNAButton.cs" />
     <Compile Include="PerspectiveCamera.cs" />
+    <Compile Include="PlanarButton.cs" />
+    <Compile Include="PlanarModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="OptionMenu.cs" />
     <Compile Include="Stage.cs" />
     <Compile Include="UnFlyableCharacter.cs" />
     <Compile Include="VideoFrame.cs" />

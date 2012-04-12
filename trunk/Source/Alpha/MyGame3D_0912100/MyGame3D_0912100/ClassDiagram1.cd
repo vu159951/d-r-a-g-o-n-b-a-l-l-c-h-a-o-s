@@ -64,7 +64,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.My3DModel" Collapsed="true">
-    <Position X="4" Y="5.75" Width="1.5" />
+    <Position X="2.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIQAAAAAAAAAAgAggAIAgAAAAAAAAAAAhAAAAAAAAIA=</HashCode>
       <FileName>My3DModel.cs</FileName>
@@ -73,22 +73,15 @@
   <Class Name="MyGame3D_0912100.MyGame" Collapsed="true">
     <Position X="18.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAQAkEAAAACIA0AAAAAAAIAEABAAGAoQAQBEQCAAAAQ=</HashCode>
+      <HashCode>gAQQkMAAAAAIA0AAAAAAAIAEAhAAGAoQAQTAACAAAAQ=</HashCode>
       <FileName>MyGame.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyGame3D_0912100.MyModel" Collapsed="true">
+  <Class Name="MyGame3D_0912100.MyModel">
     <Position X="4" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MyModel.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="MyGame3D_0912100.MyXNAButton" Collapsed="true">
-    <Position X="7.25" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAABAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
-      <FileName>MyXNAButton.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.PerspectiveCamera" Collapsed="true">
@@ -122,22 +115,36 @@
   <Class Name="MyGame3D_0912100.VisibleGameEntity" Collapsed="true">
     <Position X="8.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAYAAAAACAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAQAAAAACAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>VisibleGameEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyGame3D_0912100.MyVideoPlayer">
+  <Class Name="MyGame3D_0912100.MyVideoPlayer" Collapsed="true">
     <Position X="13.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAggAAAAABAAAAAAAFACAAgAEAAAAAAA=</HashCode>
       <FileName>MyVideoPlayer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyGame3D_0912100.VideoFrame">
-    <Position X="14.75" Y="3.25" Width="1.5" />
+  <Class Name="MyGame3D_0912100.VideoFrame" Collapsed="true">
+    <Position X="8.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAACAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>VideoFrame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.PlanarModel" Collapsed="true">
+    <Position X="5.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAQAQIsAgAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PlanarModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.PlanarButton" Collapsed="true">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAgAAAQgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PlanarButton.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

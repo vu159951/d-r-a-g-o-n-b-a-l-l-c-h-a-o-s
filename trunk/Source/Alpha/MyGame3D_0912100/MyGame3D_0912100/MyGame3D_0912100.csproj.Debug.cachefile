@@ -30,13 +30,10 @@ Content\GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_32.xnb
 Content\GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_33.xnb
 Content\GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_34.xnb
 Content\MainMenu\backgroundMenu00.xnb
-Content\MainMenu\MenuTitle100.xnb
 Content\MainMenu\MenuTitle101.xnb
 Content\MainMenu\MenuTitle102.xnb
-Content\MainMenu\MenuTitle200.xnb
 Content\MainMenu\MenuTitle201.xnb
 Content\MainMenu\MenuTitle202.xnb
-Content\MainMenu\MenuTitle300.xnb
 Content\MainMenu\MenuTitle301.xnb
 Content\MainMenu\MenuTitle302.xnb
 Content\MainMenu\MenuTitle400.xnb
@@ -45,9 +42,12 @@ Content\MainMenu\MenuTitle402.xnb
 Content\MainMenu\Title00.xnb
 Content\MainMenu\Title01.xnb
 Content\MainMenu\Title02.xnb
+Content\xxx.xnb
 Content\Gogeta4\Gogeta4.xnb
 Content\GokuSsj2\GokuSSj2.xnb
 Content\TrailerVideo\Trailer.xnb
+Content\video.xnb
+Content\MyEffect.xnb
 Content\Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri__0.xnb
 Content\Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri__1.xnb
 Content\Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri__2.xnb
@@ -75,5 +75,9 @@ Content\GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue__11.xnb
 Content\GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue__12.xnb
 Content\GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue__13.xnb
 Content\GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue__14.xnb
+Content\MainMenu\New Game.xnb
+Content\MainMenu\Option.xnb
+Content\MainMenu\Exit.xnb
 Content\TrailerVideo\Trailer.wmv
+Content\video.wmv
 Menu.xml
