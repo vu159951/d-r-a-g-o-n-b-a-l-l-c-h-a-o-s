@@ -22,7 +22,7 @@ namespace MyGame3D_0912100
         /// <summary>
         /// Camera parameter
         /// </summary>
-        private Vector3 CAMERAPOSITION = new Vector3(0, 0, 300); //vị trí cam
+        private Vector3 CAMERAPOSITION = new Vector3(50, 50, 300); //vị trí cam
         private Vector3 CAMERATARGET = new Vector3(0, 0, 0); //nhìn tới điểm đó
         private Vector3 CAMERAUPVECTOR = Vector3.Up;
         private float NEARPLANEDISTANCE = 10;
@@ -47,11 +47,8 @@ namespace MyGame3D_0912100
         private GAME_STATE _GameState;
         private Camera _camera;
 
-        //private BasicEffect _basicEffect;
         private SkinnedEffect _SkinnedEffect;
-
-        
-        
+     
         private bool _TRAILERISPLAYING = false;
 
         /// <summary>
@@ -120,13 +117,14 @@ namespace MyGame3D_0912100
         void mainMenu_Option(object sender, EventArgs e)
         {
             //new cai menu
+            
             this._GameState = GAME_STATE.OPTION;
         }
 
         void mainMenu_NewGame(object sender, EventArgs e)
         {
             stage = new Stage(Content, new GogetaSSJ4(Content, new Vector3(0, 0, 0)), new GokuSSJ2(Content, new Vector3(0, 10, 0)), null);
-            this._GameState = GAME_STATE.MAIN_MENU;
+            this._GameState = GAME_STATE.PLAYING;
         }
 
         /// <summary>
@@ -145,14 +143,42 @@ namespace MyGame3D_0912100
                                     "Option",
                                     "Exit"
                                 };
-            Vector3[] position = {
+            Vector3[] positions = {
                                      new Vector3(0, 0, 0),
                                      new Vector3(0, -35, 0),
                                      new Vector3(0, -70, 0),
                                  };
+
             string texturePrefix = "MainMenu\\";
-            mainMenu = new MainMenu(Content, texturePrefix, textures, position);
-            //this.optionMenus = new OptionMenu(Content);
+            Vector2[] sizes = {
+                                  new Vector2(320/2, 52/2),
+                                  new Vector2(320/2, 52/2),
+                                  new Vector2(320/2, 52/2)
+                              };
+
+            mainMenu = new MainMenu(Content, texturePrefix, textures, positions, sizes);
+
+            string[] textures1 = {
+                                    "Option",
+                                    "SoundVolume",
+                                    "Difficuty",
+                                    "Ball"
+                                };
+            Vector3[] positions1 = {
+                                     new Vector3(-0, 0, 0),
+                                     new Vector3(-0, -35, 0),
+                                     new Vector3(-0, -70, 0),
+                                     new Vector3(50, -0, 0),
+                                 };
+
+            string texturePrefix1 = "OptionMenu\\";
+            Vector2[] sizes1 = {
+                                  new Vector2(320/2, 52/2),
+                                  new Vector2(320/2, 52/2),
+                                  new Vector2(320/2, 52/2),
+                                  new Vector2(25, 25)
+                              };
+            this.optionMenus = new OptionMenu(Content, texturePrefix1, textures1, positions1, sizes1);
             this._camera = new PerspectiveCamera(
                 this.CAMERAPOSITION,
                 this.CAMERATARGET,
@@ -205,7 +231,7 @@ namespace MyGame3D_0912100
                         else
                         {
 
-                            if(kbState.IsKeyDown(Keys.Enter))
+                            if(kbState.IsKeyDown(Keys.Escape))
                             {
                                 this.SkipTrailerEvent(this, null);
                             }
@@ -222,8 +248,11 @@ namespace MyGame3D_0912100
                 case GAME_STATE.MAIN_MENU:
                     {
                         mainMenu.Update(gameTime, kbState, mouState);
-                        //this.optionMenus.Rotation = Matrix.CreateRotationY(MathHelper.ToRadians(t));
-                        //this.optionMenus.Update(gameTime, kbState, mouState);
+                        break;
+                    }
+                case GAME_STATE.OPTION:
+                    {
+                        this.optionMenus.Update(gameTime, kbState, mouState);
                         break;
                     }
 
@@ -265,10 +294,13 @@ namespace MyGame3D_0912100
                 case GAME_STATE.MAIN_MENU:
                     {
                         mainMenu.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
-                        //this.optionMenus.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera );
                         break;
                     }
-
+                case GAME_STATE.OPTION:
+                    {
+                        this.optionMenus.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera );
+                        break;
+                    }
                 case GAME_STATE.PLAYING:
                     {
                         stage.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
@@ -292,12 +324,12 @@ namespace MyGame3D_0912100
 
 
             VertexPositionColor[] vertices = new VertexPositionColor[6];
-            vertices[0] = new VertexPositionColor(new Vector3(-1, 0, 0), Color.Red);
-            vertices[1] = new VertexPositionColor(new Vector3(1, 0, 0), Color.GreenYellow);
-            vertices[2] = new VertexPositionColor(new Vector3(0,-1, 0), Color.Blue);
-            vertices[3] = new VertexPositionColor(new Vector3(0, 1, 0), Color.White);
-            vertices[4] = new VertexPositionColor(new Vector3(0, 0, -1), Color.Red);
-            vertices[5] = new VertexPositionColor(new Vector3(0, 0, 1), Color.Green);
+            vertices[0] = new VertexPositionColor(new Vector3(-100, 0, 0), Color.Red);
+            vertices[1] = new VertexPositionColor(new Vector3(100, 0, 0), Color.GreenYellow);
+            vertices[2] = new VertexPositionColor(new Vector3(0,-100, 0), Color.Blue);
+            vertices[3] = new VertexPositionColor(new Vector3(0, 100, 0), Color.White);
+            vertices[4] = new VertexPositionColor(new Vector3(0, 0, -100), Color.Red);
+            vertices[5] = new VertexPositionColor(new Vector3(0, 0, 100), Color.Green);
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)
             {
                 pass.Apply();

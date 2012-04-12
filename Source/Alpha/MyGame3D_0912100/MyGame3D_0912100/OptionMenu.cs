@@ -16,60 +16,116 @@ namespace MyGame3D_0912100
 
     public class OptionMenu : VisibleGameEntity
     {
-        private PlanarModel xxx;
-        private Matrix _Rotation;
-        private MyVideoPlayer myVideoPlayer;
-        private string backgroundVideo = "TrailerVideo\\Trailer";
+        List<PlanarButton> _ButtonList;
+        int _nButton;
+        int _focusButton;
+        private bool _fros = false;
+        private MyVideoPlayer _MainMenuVideoPlayer;
+        private string backgroundVideo = "MainMenu\\Start";
 
-        public OptionMenu(ContentManager content)
+        //event
+
+        public event EventHandler NewGame;
+        public event EventHandler Option;
+
+        public OptionMenu(ContentManager content, string texturePrefix, string[] textures, Vector3[] position, Vector2[] sizes)
         {
-            //xxx = new PlanarModel(content, "xxx", 1f, Vector3.Zero, Matrix.Identity);
-            Vector3[] vertices = new Vector3[6];
-            vertices[0] = new Vector3(10, 10, 0);
-            vertices[1] = new Vector3(10, -10, 0);
-            vertices[2] = new Vector3(-10, -10, 0);
+            _ButtonList = new List<PlanarButton>();
+            for(int i=0; i<textures.Length; i++)
+            {
+                PlanarButton planarButtonTemp = new PlanarButton(content, texturePrefix + textures[i], sizes[i], 1.0f, position[i], Matrix.Identity);
+                planarButtonTemp.EnableAnimation(false);
+                _ButtonList.Add(planarButtonTemp);
+            }
+            _nButton = _ButtonList.Count;
+            this._MainMenuVideoPlayer = new MyVideoPlayer();
+            this._MainMenuVideoPlayer.SetVideoToPlay(backgroundVideo, content);
+            _focusButton = 0;
+        }
 
-            vertices[3] = new Vector3(10, 10, 0);
-            vertices[4] = new Vector3(-10, -10, 0);
-            vertices[5] = new Vector3(-10, 10, 0);
 
-            Vector2[] textureCordinate = new Vector2[6];
-            textureCordinate[0] = new Vector2(1, 0);
-            textureCordinate[1] = new Vector2(1, 1);
-            textureCordinate[2] = new Vector2(0, 1);
-            textureCordinate[3] = new Vector2(1, 0);
-            textureCordinate[4] = new Vector2(0, 1);
-            textureCordinate[5] = new Vector2(0, 0);
-            xxx.InitMyPlanarModel(vertices, textureCordinate);
-            myVideoPlayer = new MyVideoPlayer();
-            myVideoPlayer.SetVideoToPlay(backgroundVideo, content);
-            myVideoPlayer.PlayVideo(true);
+        override public void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)
+        {
+
+            if(this._MainMenuVideoPlayer.GetVideoPlayerState() == MediaState.Stopped)
+            {
+                this._MainMenuVideoPlayer.PlayVideo(true);
+            }
+
+            int focusingButton = _focusButton;
+            if(!this._fros && kbs.IsKeyDown(Keys.Down))
+            {
+                focusingButton = (++focusingButton) % _nButton;
+                this.SetFocusButton(focusingButton);
+                this._fros = true;
+            }
+
+            else if (!this._fros && kbs.IsKeyDown(Keys.Up))
+            {
+                --focusingButton;
+                if (focusingButton < 0)
+                    focusingButton = _nButton - 1;
+                this.SetFocusButton(focusingButton);
+                this._fros = true;
+            }
+
+            else if (!this._fros && kbs.IsKeyDown(Keys.Enter))
+            {
+                this._fros = true;
+
+                switch(focusingButton)
+                {
+                    case 0:
+                        {
+                            //this.NewGame(this, null);
+                            break;
+                        }
+
+                    case 1:
+                        {
+                            //this.Option(this, null);
+                            break;
+                        }
+
+                    default:
+                        break;
+                }
+            }
+
+            else if(kbs.IsKeyUp(Keys.Up) && kbs.IsKeyUp(Keys.Down) && kbs.IsKeyUp(Keys.Enter))
+            {
+                this._fros = false;
+            }
+            
+            this.SetFocusButton(_focusButton);
+
+            for (int i = 0; i < _nButton; i++)
+                _ButtonList[i].Update(gameTime, kbs, ms);
         }
 
         public override void Draw(GameTime gameTime, GraphicsDevice graphicsDevice, SpriteBatch spriteBatch, Effect effect, Camera camera)
         {
-            myVideoPlayer.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
-            xxx.Draw(gameTime, graphicsDevice, spriteBatch, new BasicEffect(graphicsDevice), camera);
-        }
-
-        public override void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)
-        {
-            myVideoPlayer.Update(gameTime, kbs, ms);
-            xxx.Update(gameTime, kbs, ms);
-        }
-
-        public Matrix Rotation
-        {
-            get
+            if (this._MainMenuVideoPlayer.GetVideoPlayerState() != MediaState.Stopped)
             {
-                return this._Rotation;
+                this._MainMenuVideoPlayer.Draw(gameTime, graphicsDevice, spriteBatch, null, camera);
             }
-            set
+
+            for(int i=0; i<_nButton; i++)
             {
-                this._Rotation = value;
-                xxx.Rotation = Rotation;
+                _ButtonList[i].Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
             }
+
         }
 
+        private void SetFocusButton(int i)
+        {
+            if (i >= 0 && i < _nButton)
+            {
+                _ButtonList[_focusButton].EnableAnimation(false);
+                _ButtonList[_focusButton].Rotation = Matrix.Identity;
+                _ButtonList[i].EnableAnimation(true);
+                _focusButton = i;
+            }
+        }
     }
 }
