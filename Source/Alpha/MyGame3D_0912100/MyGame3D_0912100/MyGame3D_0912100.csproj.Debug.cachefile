@@ -32,7 +32,12 @@ Content\GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue_Mar_22_01-11-42_2011_34.xnb
 Content\MainMenu\New Game.xnb
 Content\MainMenu\Option.xnb
 Content\MainMenu\Exit.xnb
+Content\MainMenu\Title.xnb
 Content\xxx.xnb
+Content\OptionMenu\Ball.xnb
+Content\OptionMenu\Difficuty.xnb
+Content\OptionMenu\Option.xnb
+Content\OptionMenu\SoundVolume.xnb
 Content\Gogeta4\Gogeta4.xnb
 Content\GokuSsj2\GokuSSj2.xnb
 Content\TrailerVideo\Trailer.xnb
@@ -65,10 +70,5 @@ Content\GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue__11.xnb
 Content\GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue__12.xnb
 Content\GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue__13.xnb
 Content\GokuSsj2\-s 1.0 -1.0 1.0 Dolphin.exe_Tue__14.xnb
-Content\MainMenu\Title.xnb
-Content\OptionMenu\Ball.xnb
-Content\OptionMenu\Difficuty.xnb
-Content\OptionMenu\Option.xnb
-Content\OptionMenu\SoundVolume.xnb
 Content\TrailerVideo\Trailer.wmv
 Content\MainMenu\Start.wmv

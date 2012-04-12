@@ -25,7 +25,7 @@ namespace MyGame3D_0912100
 
         protected float _Scale;
 
-        private bool _isAnimate;
+        private bool _isAnimate = true;
 
         public Vector3 Position
         {
