@@ -12,8 +12,6 @@ using Microsoft.Xna.Framework.Media;
 
 namespace MyGame3D_0912100
 {
-    using Microsoft.Xna.Framework.Content;
-
     public class OptionMenu : VisibleGameEntity
     {
         List<PlanarButton> _ButtonList;
@@ -22,25 +20,48 @@ namespace MyGame3D_0912100
         private bool _fros = false;
         private MyVideoPlayer _MainMenuVideoPlayer;
         private string backgroundVideo = "MainMenu\\Start";
+        private PlanarModel _PlanarTitle;
+        private PlanarModel _PlanarPartOfBar;
+        //info
+        private int _volume;
+        private int _difficuty;
 
-        //event
-
-        public event EventHandler NewGame;
-        public event EventHandler Option;
-
-        public OptionMenu(ContentManager content, string texturePrefix, string[] textures, Vector3[] position, Vector2[] sizes)
+        public OptionMenu(ContentManager content, 
+            string texturePrefix, string[] textures,
+            Vector3[] position, Vector2[] sizes)
         {
             _ButtonList = new List<PlanarButton>();
-            for(int i=0; i<textures.Length; i++)
+            _PlanarTitle = new PlanarModel(content, 
+                texturePrefix + textures[0], 
+                sizes[0], 
+                1.0f, 
+                position[0], 
+                Matrix.Identity);
+            for(int i=1; i<textures.Length-1; i++)
             {
-                PlanarButton planarButtonTemp = new PlanarButton(content, texturePrefix + textures[i], sizes[i], 1.0f, position[i], Matrix.Identity);
+                PlanarButton planarButtonTemp = new PlanarButton(content, 
+                    texturePrefix + textures[i], 
+                    sizes[i], 
+                    1.0f, 
+                    position[i], 
+                    Matrix.Identity);
                 planarButtonTemp.EnableAnimation(false);
                 _ButtonList.Add(planarButtonTemp);
             }
+            _PlanarPartOfBar = new PlanarModel(content, 
+                texturePrefix + textures[textures.Length - 1], 
+                sizes[textures.Length - 1], 
+                1.0f, 
+                position[textures.Length - 1], 
+                Matrix.Identity);
+            _PlanarPartOfBar.IsAnimate = false;
             _nButton = _ButtonList.Count;
             this._MainMenuVideoPlayer = new MyVideoPlayer();
             this._MainMenuVideoPlayer.SetVideoToPlay(backgroundVideo, content);
+
             _focusButton = 0;
+            _volume = 3;
+            _difficuty = 3;
         }
 
 
@@ -98,9 +119,10 @@ namespace MyGame3D_0912100
             }
             
             this.SetFocusButton(_focusButton);
-
+            this._PlanarTitle.Update(gameTime, kbs, ms);
             for (int i = 0; i < _nButton; i++)
                 _ButtonList[i].Update(gameTime, kbs, ms);
+            this._PlanarPartOfBar.Update(gameTime, kbs, ms);
         }
 
         public override void Draw(GameTime gameTime, GraphicsDevice graphicsDevice, SpriteBatch spriteBatch, Effect effect, Camera camera)
@@ -110,11 +132,28 @@ namespace MyGame3D_0912100
                 this._MainMenuVideoPlayer.Draw(gameTime, graphicsDevice, spriteBatch, null, camera);
             }
 
+            _PlanarTitle.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
+
             for(int i=0; i<_nButton; i++)
             {
                 _ButtonList[i].Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
             }
 
+            //volume bar
+            for(int i=0; i<_volume; i++)
+            {
+                _PlanarPartOfBar.Position = new Vector3(_PlanarPartOfBar.Position.X + 25 * i, 
+                    _ButtonList[0].Position.Y, 0);
+                _PlanarPartOfBar.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
+            }
+
+            //difficuty bar
+            for (int i = 0; i < _difficuty; i++)
+            {
+                _PlanarPartOfBar.Position = new Vector3(_PlanarPartOfBar.Position.X + 25 * i, 
+                    _ButtonList[1].Position.Y, 0);
+                _PlanarPartOfBar.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
+            }
         }
 
         private void SetFocusButton(int i)

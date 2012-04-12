@@ -165,10 +165,10 @@ namespace MyGame3D_0912100
                                     "Ball"
                                 };
             Vector3[] positions1 = {
-                                     new Vector3(-0, 0, 0),
-                                     new Vector3(-0, -35, 0),
-                                     new Vector3(-0, -70, 0),
-                                     new Vector3(50, -0, 0),
+                                     new Vector3(0, 50, 0),
+                                     new Vector3(0, 0, 0),
+                                     new Vector3(0, -35, 0),
+                                     new Vector3(0, 0, 0),
                                  };
 
             string texturePrefix1 = "OptionMenu\\";
@@ -176,7 +176,7 @@ namespace MyGame3D_0912100
                                   new Vector2(320/2, 52/2),
                                   new Vector2(320/2, 52/2),
                                   new Vector2(320/2, 52/2),
-                                  new Vector2(25, 25)
+                                  new Vector2(20, 20)
                               };
             this.optionMenus = new OptionMenu(Content, texturePrefix1, textures1, positions1, sizes1);
             this._camera = new PerspectiveCamera(

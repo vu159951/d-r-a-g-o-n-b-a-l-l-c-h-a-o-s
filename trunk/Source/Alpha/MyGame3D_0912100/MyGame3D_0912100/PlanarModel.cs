@@ -27,7 +27,7 @@ namespace MyGame3D_0912100
 
         private Effect MyEffect;
 
-        private bool isAnimate = false;
+        private bool isAnimate = true;
 
         private string EFFECT_NAME = "MyEffect";
 
