@@ -22,20 +22,25 @@ namespace MyGame3D_0912100
         private string backgroundVideo = "MainMenu\\Start";
         private PlanarModel _PlanarTitle;
         private PlanarModel _PlanarPartOfBar;
+        private Vector3 _OriginalPositionBar;
         //info
         private int _volume;
         private int _difficuty;
 
+        private const int MAX_VOLUME = 3;
+
+        private const int MAX_DIFFICUTY = 3;
+
         public OptionMenu(ContentManager content, 
             string texturePrefix, string[] textures,
-            Vector3[] position, Vector2[] sizes)
+            Vector3[] positions, Vector2[] sizes)
         {
             _ButtonList = new List<PlanarButton>();
             _PlanarTitle = new PlanarModel(content, 
                 texturePrefix + textures[0], 
                 sizes[0], 
                 1.0f, 
-                position[0], 
+                positions[0], 
                 Matrix.Identity);
             for(int i=1; i<textures.Length-1; i++)
             {
@@ -43,7 +48,7 @@ namespace MyGame3D_0912100
                     texturePrefix + textures[i], 
                     sizes[i], 
                     1.0f, 
-                    position[i], 
+                    positions[i], 
                     Matrix.Identity);
                 planarButtonTemp.EnableAnimation(false);
                 _ButtonList.Add(planarButtonTemp);
@@ -52,9 +57,10 @@ namespace MyGame3D_0912100
                 texturePrefix + textures[textures.Length - 1], 
                 sizes[textures.Length - 1], 
                 1.0f, 
-                position[textures.Length - 1], 
+                positions[textures.Length - 1], 
                 Matrix.Identity);
             _PlanarPartOfBar.IsAnimate = false;
+            _OriginalPositionBar = positions[textures.Length - 1];
             _nButton = _ButtonList.Count;
             this._MainMenuVideoPlayer = new MyVideoPlayer();
             this._MainMenuVideoPlayer.SetVideoToPlay(backgroundVideo, content);
@@ -142,7 +148,7 @@ namespace MyGame3D_0912100
             //volume bar
             for(int i=0; i<_volume; i++)
             {
-                _PlanarPartOfBar.Position = new Vector3(_PlanarPartOfBar.Position.X + 25 * i, 
+                _PlanarPartOfBar.Position = new Vector3(_OriginalPositionBar.X + 25 * i, 
                     _ButtonList[0].Position.Y, 0);
                 _PlanarPartOfBar.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
             }
@@ -150,7 +156,7 @@ namespace MyGame3D_0912100
             //difficuty bar
             for (int i = 0; i < _difficuty; i++)
             {
-                _PlanarPartOfBar.Position = new Vector3(_PlanarPartOfBar.Position.X + 25 * i, 
+                _PlanarPartOfBar.Position = new Vector3(_OriginalPositionBar.X + 25 * i, 
                     _ButtonList[1].Position.Y, 0);
                 _PlanarPartOfBar.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
             }
