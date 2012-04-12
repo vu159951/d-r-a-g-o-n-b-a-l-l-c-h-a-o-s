@@ -45,7 +45,7 @@
   <Class Name="MyGame3D_0912100.MainMenu" Collapsed="true">
     <Position X="5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQICAAAoAAAAgAAAAAACAAABCAABQAAAAgAAAAEAAA=</HashCode>
+      <HashCode>CAUACAAAoAAAAgAAAAAACAAABCAABAAAAAgAAAAAAAA=</HashCode>
       <FileName>MainMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -73,7 +73,7 @@
   <Class Name="MyGame3D_0912100.MyGame" Collapsed="true">
     <Position X="18.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAQQkMAAAAAIA0AAAAAAAIAEAhAAGAoQAQTAACAAAAQ=</HashCode>
+      <HashCode>gAQQkNAAAAAIA0AAAAAAAIAEAhAAGAoQAQDAACAAAAQ=</HashCode>
       <FileName>MyGame.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -136,15 +136,22 @@
   <Class Name="MyGame3D_0912100.PlanarModel" Collapsed="true">
     <Position X="5.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAQAQIsAgAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAIAQAQosQgAAIAhAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PlanarModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.PlanarButton" Collapsed="true">
-    <Position X="6.25" Y="4.5" Width="1.5" />
+    <Position X="7.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAgAgAAAQgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PlanarButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.PlanarEntity">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAEAAAgAAIQgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PlanarEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

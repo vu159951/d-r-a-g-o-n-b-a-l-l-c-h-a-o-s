@@ -298,13 +298,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="video.wmv">
-      <Name>video</Name>
-      <Importer>WmvImporter</Importer>
-      <Processor>VideoProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="xxx.jpg">
       <Name>xxx</Name>
       <Importer>TextureImporter</Importer>
@@ -316,6 +309,13 @@
       <Name>MyEffect</Name>
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainMenu\Start.wmv">
+      <Name>Start</Name>
+      <Importer>WmvImporter</Importer>
+      <Processor>VideoProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

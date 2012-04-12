@@ -12,15 +12,9 @@ using Microsoft.Xna.Framework.Media;
 
 namespace MyGame3D_0912100
 {
-    public class PlanarButton : VisibleGameEntity
+    public class PlanarButton : PlanarEntity
     {
-        private PlanarModel _planarModel;
-
-        private Vector3 _Position;
-
-        private float _Scale;
-
-        private bool _isAnimate;
+       
 
         public PlanarButton(ContentManager content, String texture, Vector2 size, float scale, Vector3 position, Matrix rotation)
         {
@@ -30,31 +24,7 @@ namespace MyGame3D_0912100
             this._isAnimate = false;
         }
 
-        public Vector3 Position
-        {
-            get
-            {
-                return this._Position;
-            }
-            set
-            {
-                this._Position = value;
-                _planarModel.Position = Position;
-            }
-        }
-
-        public float Scale
-        {
-            get
-            {
-                return this._Scale;
-            }
-            set
-            {
-                this._Scale = value;
-                this._planarModel.Scale = Scale;
-            }
-        }
+        
 
         public override void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)
         {
@@ -66,9 +36,6 @@ namespace MyGame3D_0912100
             _planarModel.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
         }
 
-        public void EnableAnimation(bool p)
-        {
-            this._isAnimate = p;
-        }
+        
     }
 }
