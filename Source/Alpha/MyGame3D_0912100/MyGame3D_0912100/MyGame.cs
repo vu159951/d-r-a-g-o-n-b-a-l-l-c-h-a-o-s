@@ -310,7 +310,7 @@ namespace MyGame3D_0912100
                 default:
                     break;
             }
-            DrawCordinate();
+            //DrawCordinate();
             base.Draw(gameTime);
         }
 

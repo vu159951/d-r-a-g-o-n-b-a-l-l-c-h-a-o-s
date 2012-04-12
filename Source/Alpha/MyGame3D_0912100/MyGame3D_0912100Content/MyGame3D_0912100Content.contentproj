@@ -202,13 +202,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GokuSsj2\GokuSSj2.fbx">
-      <Name>GokuSSj2</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>SkinnedModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="MainMenu\New Game.png">
       <Name>New Game</Name>
       <Importer>TextureImporter</Importer>
@@ -278,6 +271,27 @@
     </Compile>
     <Compile Include="OptionMenu\SoundVolume.png">
       <Name>SoundVolume</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Map\Grass And Ground.jpg">
+      <Name>Grass And Ground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GokuSsj2\GokuSsj2.fbx">
+      <Name>GokuSsj2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>SkinnedModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Map\Ground.jpg">
+      <Name>Ground</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
