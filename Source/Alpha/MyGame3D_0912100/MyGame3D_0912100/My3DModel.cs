@@ -88,9 +88,9 @@ namespace MyGame3D_0912100
         }
 
 
-        public void Update(GameTime gametime, Microsoft.Xna.Framework.Input.KeyboardState kbstate, Microsoft.Xna.Framework.Input.MouseState moustate)
+        public override void Update(GameTime gameTime, Microsoft.Xna.Framework.Input.KeyboardState kbs, Microsoft.Xna.Framework.Input.MouseState ms)
         {
-            this._AnimationPlayer.Update(gametime.ElapsedGameTime, true, Matrix.Identity);
+            this._AnimationPlayer.Update(gameTime.ElapsedGameTime, true, Matrix.Identity);
         }
 
 

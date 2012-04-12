@@ -22,8 +22,8 @@ namespace MyGame3D_0912100
         /// <summary>
         /// Camera parameter
         /// </summary>
-        private Vector3 CAMERAPOSITION = new Vector3(0, 30, 40); //vị trí cam
-        private Vector3 CAMERATARGET = new Vector3(0, 30, 0); //nhìn tới điểm đó
+        private Vector3 CAMERAPOSITION = new Vector3(0, 0, 300); //vị trí cam
+        private Vector3 CAMERATARGET = new Vector3(0, 0, 0); //nhìn tới điểm đó
         private Vector3 CAMERAUPVECTOR = Vector3.Up;
         private float NEARPLANEDISTANCE = 10;
         private float FARPLANEDISTANCE = 1000;
@@ -59,10 +59,12 @@ namespace MyGame3D_0912100
         /// </summary>
 
         private MainMenu mainMenu = null;
+        private OptionMenu optionMenus = null;
         private Stage stage;
 
         private MyVideoPlayer _MyVideoPlayer;
 
+        private string trailerVideo = "TrailerVideo\\Trailer";
 
         /// <summary>
         /// Event
@@ -101,7 +103,7 @@ namespace MyGame3D_0912100
 
 
             this._MyVideoPlayer = new MyVideoPlayer();
-            this._MyVideoPlayer.SetVideoToPlay("TrailerVideo\\Trailer", Content);
+            this._MyVideoPlayer.SetVideoToPlay(trailerVideo, Content);
 
 
             graphics.ApplyChanges();
@@ -137,8 +139,20 @@ namespace MyGame3D_0912100
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            mainMenu = new MainMenu(Content, ".\\Menu.xml");
 
+            string[] textures = {
+                                    "New Game",
+                                    "Option",
+                                    "Exit"
+                                };
+            Vector3[] position = {
+                                     new Vector3(0, 0, 0),
+                                     new Vector3(0, -35, 0),
+                                     new Vector3(0, -70, 0),
+                                 };
+            string texturePrefix = "MainMenu\\";
+            mainMenu = new MainMenu(Content, texturePrefix, textures, position);
+            //this.optionMenus = new OptionMenu(Content);
             this._camera = new PerspectiveCamera(
                 this.CAMERAPOSITION,
                 this.CAMERATARGET,
@@ -208,6 +222,8 @@ namespace MyGame3D_0912100
                 case GAME_STATE.MAIN_MENU:
                     {
                         mainMenu.Update(gameTime, kbState, mouState);
+                        //this.optionMenus.Rotation = Matrix.CreateRotationY(MathHelper.ToRadians(t));
+                        //this.optionMenus.Update(gameTime, kbState, mouState);
                         break;
                     }
 
@@ -235,8 +251,7 @@ namespace MyGame3D_0912100
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
-
+            
             switch (this._GameState)
             {
                 case GAME_STATE.TRAILER:
@@ -250,6 +265,7 @@ namespace MyGame3D_0912100
                 case GAME_STATE.MAIN_MENU:
                     {
                         mainMenu.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
+                        //this.optionMenus.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera );
                         break;
                     }
 
@@ -262,10 +278,33 @@ namespace MyGame3D_0912100
                 default:
                     break;
             }
-
+            DrawCordinate();
             base.Draw(gameTime);
         }
 
-        
+        private void DrawCordinate()
+        {
+            BasicEffect effect = new BasicEffect(GraphicsDevice);
+            effect.VertexColorEnabled = true;
+            effect.Projection = _camera.Projection;
+            effect.View = _camera.View;
+            effect.World = Matrix.Identity;
+
+
+            VertexPositionColor[] vertices = new VertexPositionColor[6];
+            vertices[0] = new VertexPositionColor(new Vector3(-1, 0, 0), Color.Red);
+            vertices[1] = new VertexPositionColor(new Vector3(1, 0, 0), Color.GreenYellow);
+            vertices[2] = new VertexPositionColor(new Vector3(0,-1, 0), Color.Blue);
+            vertices[3] = new VertexPositionColor(new Vector3(0, 1, 0), Color.White);
+            vertices[4] = new VertexPositionColor(new Vector3(0, 0, -1), Color.Red);
+            vertices[5] = new VertexPositionColor(new Vector3(0, 0, 1), Color.Green);
+            foreach (EffectPass pass in effect.CurrentTechnique.Passes)
+            {
+                pass.Apply();
+                GraphicsDevice.DrawUserPrimitives<VertexPositionColor>(PrimitiveType.LineList,
+                vertices, 0, 3, VertexPositionColor.VertexDeclaration);
+            }
+            
+        }
     }
 }
