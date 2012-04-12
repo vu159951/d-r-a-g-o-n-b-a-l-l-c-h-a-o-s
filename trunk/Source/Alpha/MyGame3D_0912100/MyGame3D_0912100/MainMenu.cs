@@ -19,49 +19,33 @@ namespace MyGame3D_0912100
 {
     public class MainMenu : VisibleGameEntity
     {
-        List<PlanarButton> _ButtonList;
-        int _nButton;
-        int _focusButton;
+        private List<PlanarButton> _ButtonList;
+        private int _nButton;
+        private int _focusButton;
+        private PlanarModel _Title;
         private bool _fros = false;
-        private bool isFirstPress = true;
-
         private MyVideoPlayer _MainMenuVideoPlayer;
-        private ContentManager _Content;
+        private string backgrounVideo = "MainMenu\\Start";
 
         //event
 
         public event EventHandler NewGame;
         public event EventHandler Option;
 
-     
-
-        private void setFocusButton(int i)
+        public MainMenu(ContentManager content, string texturePrefix, string[] textures, Vector3[] positions, Vector2[] sizes)
         {
-            if (i >= 0 && i < _nButton)
-            {
-                _ButtonList[_focusButton].EnableAnimation(false);
-                _ButtonList[_focusButton].Rotation = Matrix.Identity;
-                _ButtonList[i].EnableAnimation(true);
-                _focusButton = i;
-            }
-        }
-        public MainMenu(ContentManager content, string texturePrefix, string[] textures, Vector3[] position)
-        {
-            this._Content = content;
-
             _ButtonList = new List<PlanarButton>();
             for(int i=0; i<textures.Length; i++)
             {
-                PlanarButton planarButtonTemp = new PlanarButton(content, texturePrefix + textures[i], new Vector2(320/2, 52/2), 1.0f, position[i], Matrix.Identity);
+                PlanarButton planarButtonTemp = new PlanarButton(content, texturePrefix + textures[i], sizes[i], 1.0f, positions[i], Matrix.Identity);
                 planarButtonTemp.EnableAnimation(false);
                 _ButtonList.Add(planarButtonTemp);
             }
             _nButton = _ButtonList.Count;
             this._MainMenuVideoPlayer = new MyVideoPlayer();
-            this._MainMenuVideoPlayer.SetVideoToPlay("MainMenu\\Start", content);
+            this._MainMenuVideoPlayer.SetVideoToPlay(backgrounVideo, content);
             _focusButton = 0;
         }
-
 
         override public void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)
         {
@@ -75,7 +59,7 @@ namespace MyGame3D_0912100
             if(!this._fros && kbs.IsKeyDown(Keys.Down))
             {
                 focusingButton = (++focusingButton) % _nButton;
-                setFocusButton(focusingButton);
+                this.SetFocusButton(focusingButton);
                 this._fros = true;
             }
 
@@ -84,7 +68,7 @@ namespace MyGame3D_0912100
                 --focusingButton;
                 if (focusingButton < 0)
                     focusingButton = _nButton - 1;
-                setFocusButton(focusingButton);
+                this.SetFocusButton(focusingButton);
                 this._fros = true;
             }
 
@@ -116,7 +100,7 @@ namespace MyGame3D_0912100
                 this._fros = false;
             }
             
-            this.setFocusButton(_focusButton);
+            this.SetFocusButton(_focusButton);
 
             for (int i = 0; i < _nButton; i++)
                 _ButtonList[i].Update(gameTime, kbs, ms);
@@ -134,7 +118,17 @@ namespace MyGame3D_0912100
                 _ButtonList[i].Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
             }
 
-           
+        }
+
+        private void SetFocusButton(int i)
+        {
+            if (i >= 0 && i < _nButton)
+            {
+                _ButtonList[_focusButton].EnableAnimation(false);
+                _ButtonList[_focusButton].Rotation = Matrix.Identity;
+                _ButtonList[i].EnableAnimation(true);
+                _focusButton = i;
+            }
         }
     }
 }
