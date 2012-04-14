@@ -36,6 +36,7 @@ namespace MyGame3D_0912100
 
         public event EventHandler NewGame;
         public event EventHandler Option;
+        public event EventHandler ExitGame;
 
         public MainMenu(ContentManager content, string texturePrefix, string[] textures, Vector3[] positions, Vector2[] sizes)
         {
@@ -95,6 +96,11 @@ namespace MyGame3D_0912100
                     case 1:
                         {
                             this.Option(this, null);
+                            break;
+                        }
+                    case 2:
+                        {
+                            this.ExitGame(this, null);
                             break;
                         }
 
