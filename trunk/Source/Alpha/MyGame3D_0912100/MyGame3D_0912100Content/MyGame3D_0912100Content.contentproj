@@ -231,13 +231,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="xxx.jpg">
-      <Name>xxx</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="MyEffect.fx">
       <Name>MyEffect</Name>
       <Importer>EffectImporter</Importer>
@@ -292,6 +285,13 @@
   <ItemGroup>
     <Compile Include="Map\Ground.jpg">
       <Name>Ground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainMenu\Banner.png">
+      <Name>Banner</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
