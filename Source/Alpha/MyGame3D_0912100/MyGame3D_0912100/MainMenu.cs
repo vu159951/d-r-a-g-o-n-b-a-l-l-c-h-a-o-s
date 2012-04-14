@@ -25,7 +25,12 @@ namespace MyGame3D_0912100
         private PlanarModel _Title;
         private bool _fros = false;
         private MyVideoPlayer _MainMenuVideoPlayer;
-        private string backgrounVideo = "MainMenu\\Start";
+        private string BACKGROUND_VIDEO = "MainMenu\\Start";
+        private string TITLE = "MainMenu\\Title";
+        private float _Scale = 1.0f;
+
+        private Vector3 TITLE_POSITION = new Vector3(0, 89, 0);
+        private Vector2 TITLE_SIZE = new Vector2(180, 70);
 
         //event
 
@@ -37,14 +42,17 @@ namespace MyGame3D_0912100
             _ButtonList = new List<PlanarButton>();
             for(int i=0; i<textures.Length; i++)
             {
-                PlanarButton planarButtonTemp = new PlanarButton(content, texturePrefix + textures[i], sizes[i], 1.0f, positions[i], Matrix.Identity);
+                PlanarButton planarButtonTemp = new PlanarButton(content, texturePrefix + textures[i], sizes[i], _Scale, positions[i], Matrix.Identity);
                 planarButtonTemp.EnableAnimation(false);
                 _ButtonList.Add(planarButtonTemp);
             }
             _nButton = _ButtonList.Count;
             this._MainMenuVideoPlayer = new MyVideoPlayer();
-            this._MainMenuVideoPlayer.SetVideoToPlay(backgrounVideo, content);
+            this._MainMenuVideoPlayer.SetVideoToPlay(BACKGROUND_VIDEO, content);
             _focusButton = 0;
+
+            this._Title = new PlanarModel(content, TITLE, TITLE_SIZE, this._Scale, TITLE_POSITION, Matrix.Identity);
+            this._Title.IsAnimate = false;
         }
 
         override public void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)
@@ -102,6 +110,10 @@ namespace MyGame3D_0912100
             
             this.SetFocusButton(_focusButton);
 
+
+            this._Title.Update(gameTime, kbs, ms);
+
+
             for (int i = 0; i < _nButton; i++)
                 _ButtonList[i].Update(gameTime, kbs, ms);
         }
@@ -112,6 +124,9 @@ namespace MyGame3D_0912100
             {
                 this._MainMenuVideoPlayer.Draw(gameTime, graphicsDevice, spriteBatch, null, camera);
             }
+
+
+            this._Title.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
 
             for(int i=0; i<_nButton; i++)
             {
