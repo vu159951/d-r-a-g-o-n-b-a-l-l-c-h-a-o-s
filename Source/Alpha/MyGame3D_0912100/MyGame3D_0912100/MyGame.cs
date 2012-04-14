@@ -22,7 +22,7 @@ namespace MyGame3D_0912100
         /// <summary>
         /// Camera parameter
         /// </summary>
-        private Vector3 CAMERAPOSITION = new Vector3(50, 50, 300); //vị trí cam
+        private Vector3 CAMERAPOSITION = new Vector3(0, 0, 300); //vị trí cam
         private Vector3 CAMERATARGET = new Vector3(0, 0, 0); //nhìn tới điểm đó
         private Vector3 CAMERAUPVECTOR = Vector3.Up;
         private float NEARPLANEDISTANCE = 10;

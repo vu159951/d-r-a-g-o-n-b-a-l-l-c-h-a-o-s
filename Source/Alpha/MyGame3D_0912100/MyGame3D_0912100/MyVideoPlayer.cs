@@ -22,6 +22,7 @@ namespace MyGame3D_0912100
         private VideoPlayer _VideoPlayer;
         private Video _Video;
         private VideoFrame _VideoFrame = new VideoFrame();
+        private ContentManager _Content;
 
         
 
@@ -33,6 +34,7 @@ namespace MyGame3D_0912100
         
         public void SetVideoToPlay(string name, ContentManager content)
         {
+            this._Content = content;
             this._Video = content.Load<Video>(name);
         }
 
@@ -55,8 +57,8 @@ namespace MyGame3D_0912100
 
         public override void  Draw(GameTime gameTime, GraphicsDevice graphicsDevice, SpriteBatch spriteBatch, Effect effect, Camera camera)
         {
-            this._VideoFrame.UpdateFrame(_VideoPlayer,
-                                        new Vector2(graphicsDevice.Viewport.X, graphicsDevice.Viewport.Y),
+            this._VideoFrame.UpdateFrame(_Content, _VideoPlayer,
+                                        new Vector3(graphicsDevice.Viewport.X, graphicsDevice.Viewport.Y, -50),
                                         new Vector2(graphicsDevice.Viewport.Width, graphicsDevice.Viewport.Height));
             this._VideoFrame.Draw(gameTime, graphicsDevice, spriteBatch, null, camera);
         }

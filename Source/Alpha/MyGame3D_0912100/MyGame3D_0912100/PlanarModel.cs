@@ -34,6 +34,19 @@ namespace MyGame3D_0912100
         public PlanarModel(ContentManager content, string texture, Vector2 size, float scale, Vector3 position, Matrix rotation)
         {
             this._Texture = content.Load<Texture2D>(texture);
+            InitInfomation(content, ref size, scale, ref position, ref rotation);
+
+        }
+
+        public PlanarModel(ContentManager content, Texture2D texture, Vector2 size, float scale, Vector3 position, Matrix rotation)
+        {
+            this._Texture = texture;
+            InitInfomation(content, ref size, scale, ref position, ref rotation);
+
+        }
+
+        private void InitInfomation(ContentManager content, ref Vector2 size, float scale, ref Vector3 position, ref Matrix rotation)
+        {
             this.Scale = scale;
             this.Position = position;
             this.Rotation = rotation;
@@ -42,7 +55,7 @@ namespace MyGame3D_0912100
 
 
             Vector3[] vertices = new Vector3[6];
-            vertices[0] = new Vector3(Size.X/2, Size.Y/2, 0);
+            vertices[0] = new Vector3(Size.X / 2, Size.Y / 2, 0);
             vertices[1] = new Vector3(Size.X / 2, -Size.Y / 2, 0);
             vertices[2] = new Vector3(-Size.X / 2, -Size.Y / 2, 0);
 
@@ -58,8 +71,11 @@ namespace MyGame3D_0912100
             textureCordinate[4] = new Vector2(0, 1);
             textureCordinate[5] = new Vector2(0, 0);
             this.InitMyPlanarModel(vertices, textureCordinate);
-
         }
+
+
+
+
 
         public Matrix Rotation
         {
