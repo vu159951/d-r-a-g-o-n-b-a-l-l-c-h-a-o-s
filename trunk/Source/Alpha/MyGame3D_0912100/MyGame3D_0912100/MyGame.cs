@@ -22,7 +22,7 @@ namespace MyGame3D_0912100
         /// <summary>
         /// Camera parameter
         /// </summary>
-        private Vector3 CAMERAPOSITION = new Vector3(50, 50, 300); //vị trí cam
+        private Vector3 CAMERAPOSITION = new Vector3(0, 0, 300); //vị trí cam
         private Vector3 CAMERATARGET = new Vector3(0, 0, 0); //nhìn tới điểm đó
         private Vector3 CAMERAUPVECTOR = Vector3.Up;
         private float NEARPLANEDISTANCE = 10;
@@ -145,9 +145,9 @@ namespace MyGame3D_0912100
                                     "Exit"
                                 };
             Vector3[] positions = {
-                                     new Vector3(0, 0, 0),
-                                     new Vector3(0, -35, 0),
-                                     new Vector3(0, -70, 0),
+                                     new Vector3(0, -10, 0),
+                                     new Vector3(0, -45, 0),
+                                     new Vector3(0, -80, 0),
                                  };
 
             string texturePrefix = "MainMenu\\";
