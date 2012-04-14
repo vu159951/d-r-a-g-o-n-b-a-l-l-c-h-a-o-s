@@ -23,13 +23,23 @@ namespace MyGame3D_0912100
         private PlanarModel _PlanarTitle;
         private PlanarModel _PlanarPartOfBar;
         private Vector3 _OriginalPositionBar;
+
+        private const int MAXFOCUSBUTTON = 4;
+        private const int MINFOCUSBUTTON = 0;
+        private float _Scale = 1.0f;
         //info
         private int _volume;
         private int _difficuty;
 
+
         private const int MAX_VOLUME = 3;
 
         private const int MAX_DIFFICUTY = 3;
+
+        public event EventHandler BackToMainMenu;
+        public event EventHandler DownVolume;
+        public event EventHandler UpVolume;
+
 
         public OptionMenu(ContentManager content, 
             string texturePrefix, string[] textures,
@@ -39,24 +49,27 @@ namespace MyGame3D_0912100
             _PlanarTitle = new PlanarModel(content, 
                 texturePrefix + textures[0], 
                 sizes[0], 
-                1.0f, 
+                _Scale, 
                 positions[0], 
                 Matrix.Identity);
+            this._PlanarTitle.IsAnimate = false;
+
             for(int i=1; i<textures.Length-1; i++)
             {
                 PlanarButton planarButtonTemp = new PlanarButton(content, 
                     texturePrefix + textures[i], 
                     sizes[i], 
-                    1.0f, 
+                    _Scale, 
                     positions[i], 
                     Matrix.Identity);
                 planarButtonTemp.EnableAnimation(false);
                 _ButtonList.Add(planarButtonTemp);
             }
+
             _PlanarPartOfBar = new PlanarModel(content, 
                 texturePrefix + textures[textures.Length - 1], 
                 sizes[textures.Length - 1], 
-                1.0f, 
+                _Scale, 
                 positions[textures.Length - 1], 
                 Matrix.Identity);
             _PlanarPartOfBar.IsAnimate = false;
@@ -65,6 +78,8 @@ namespace MyGame3D_0912100
             this._MainMenuVideoPlayer = new MyVideoPlayer();
             this._MainMenuVideoPlayer.SetVideoToPlay(backgroundVideo, content);
 
+
+            //Khoi tao
             _focusButton = 0;
             _volume = 3;
             _difficuty = 3;
@@ -80,7 +95,7 @@ namespace MyGame3D_0912100
             }
 
             int focusingButton = _focusButton;
-            if(!this._fros && kbs.IsKeyDown(Keys.Down))
+            if (!this._fros && kbs.IsKeyDown(Keys.Down))
             {
                 focusingButton = (++focusingButton) % _nButton;
                 this.SetFocusButton(focusingButton);
@@ -90,7 +105,7 @@ namespace MyGame3D_0912100
             else if (!this._fros && kbs.IsKeyDown(Keys.Up))
             {
                 --focusingButton;
-                if (focusingButton < 0)
+                if (focusingButton < MINFOCUSBUTTON)
                     focusingButton = _nButton - 1;
                 this.SetFocusButton(focusingButton);
                 this._fros = true;
@@ -100,7 +115,7 @@ namespace MyGame3D_0912100
             {
                 this._fros = true;
 
-                switch(focusingButton)
+                switch (focusingButton)
                 {
                     case 0:
                         {
@@ -113,13 +128,72 @@ namespace MyGame3D_0912100
                             //this.Option(this, null);
                             break;
                         }
+                    case 2:
+                        {
+                            this.BackToMainMenu(this, null);
+                            break;
+                        }
 
                     default:
                         break;
                 }
             }
 
-            else if(kbs.IsKeyUp(Keys.Up) && kbs.IsKeyUp(Keys.Down) && kbs.IsKeyUp(Keys.Enter))
+            else if(!this._fros && kbs.IsKeyDown(Keys.Left))
+            {
+                this._fros = true;
+                switch (focusingButton)
+                {
+                    case 0:
+                        {
+                            if (this._volume > 0)
+                            {
+                                this._volume--;
+                                this.DownVolume(this, null);
+                            }
+                            break;
+                        }
+
+                    case 1:
+                        {
+                            if (this._difficuty > 0)
+                                this._difficuty--;
+                            break;
+                        }
+
+                    default:
+                        break;
+                }
+            }
+
+            else if (!this._fros && kbs.IsKeyDown(Keys.Right))
+            {
+                this._fros = true;
+                switch (focusingButton)
+                {
+                    case 0:
+                        {
+                            if (this._volume < MAX_VOLUME)
+                            {
+                                this._volume++;
+                                this.UpVolume(this, null);
+                            }
+                            break;
+                        }
+
+                    case 1:
+                        {
+                            if (this._difficuty < MAX_DIFFICUTY)
+                                this._difficuty++;
+                            break;
+                        }
+
+                    default:
+                        break;
+                }
+            }
+
+            else if (kbs.IsKeyUp(Keys.Up) && kbs.IsKeyUp(Keys.Down) && kbs.IsKeyUp(Keys.Enter) && kbs.IsKeyUp(Keys.Left) && kbs.IsKeyUp(Keys.Right))
             {
                 this._fros = false;
             }

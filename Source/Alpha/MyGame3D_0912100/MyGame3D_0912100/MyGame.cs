@@ -36,7 +36,11 @@ namespace MyGame3D_0912100
         /// </summary>
         //private float STARTRADIAN = 0;
         //private float VELOCITY = 1;
-        
+        private string TRAILER_VIDEO = "TrailerVideo\\Trailer";
+
+        private const float BASE_VOLUME = 1.0f / 3.0f;
+
+        private float VOLUME = 1.0f; //0.0f ~ 1.0f
         
 
         /// <summary>
@@ -51,17 +55,32 @@ namespace MyGame3D_0912100
      
         private bool _TRAILERISPLAYING = false;
 
+        public float GAME_VOLUME
+        {
+            get { return VOLUME; }
+            set
+            {
+                VOLUME = value;
+                this._MyVideoPlayer.SetVolume(value);
+                MediaPlayer.Volume = value;
+            }
+        }
+
+
+
         /// <summary>
         /// Game visible entity
         /// </summary>
 
-        private MainMenu mainMenu = null;
-        private OptionMenu optionMenus = null;
-        private Stage stage;
+        private MainMenu _MainMenu = null;
+        private OptionMenu _OptionMenus = null;
+        private Stage _Stage;
 
         private MyVideoPlayer _MyVideoPlayer;
 
-        private string trailerVideo = "TrailerVideo\\Trailer";
+
+        private Song _Song;
+        
 
         /// <summary>
         /// Event
@@ -94,16 +113,52 @@ namespace MyGame3D_0912100
             this._GameState = GAME_STATE.TRAILER;
 
             //Delegate
-            this.mainMenu.NewGame += new EventHandler(mainMenu_NewGame);
-            this.mainMenu.Option += new EventHandler(mainMenu_Option);
+            this._MainMenu.NewGame += new EventHandler(mainMenu_NewGame);
+            this._MainMenu.Option += new EventHandler(mainMenu_Option);
+            this._MainMenu.ExitGame += new EventHandler(mainMenu_ExitGame);
             SkipTrailerEvent += new EventHandler(SkipTrailer);
 
 
-            this._MyVideoPlayer = new MyVideoPlayer();
-            this._MyVideoPlayer.SetVideoToPlay(trailerVideo, Content);
+            this._OptionMenus.BackToMainMenu += new EventHandler(optionMenus_BackToMainMenu);
+            this._OptionMenus.DownVolume += new EventHandler(_OptionMenus_DownVolume);
+            this._OptionMenus.UpVolume += new EventHandler(_OptionMenus_UpVolume);       
 
+            this._MyVideoPlayer = new MyVideoPlayer();
+            this._MyVideoPlayer.SetVideoToPlay(TRAILER_VIDEO, Content);
+
+
+            this._Song = Content.Load<Song>("MainMenu\\SoundEff");
+
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume = GAME_VOLUME;
 
             graphics.ApplyChanges();
+        }
+
+        void _OptionMenus_UpVolume(object sender, EventArgs e)
+        {
+            GAME_VOLUME += BASE_VOLUME;
+            if (GAME_VOLUME > 1.0f)
+                GAME_VOLUME = 1.0f;
+        }
+
+        void _OptionMenus_DownVolume(object sender, EventArgs e)
+        {
+            VOLUME -= BASE_VOLUME;
+            if (VOLUME < 0.0f)
+                GAME_VOLUME = 0.0f;
+            else
+                GAME_VOLUME = VOLUME;
+        }
+
+        void optionMenus_BackToMainMenu(object sender, EventArgs e)
+        {
+            this._GameState = GAME_STATE.MAIN_MENU;
+        }
+
+        void mainMenu_ExitGame(object sender, EventArgs e)
+        {
+            this.Exit();
         }
 
         void SkipTrailer(object sender, EventArgs e)
@@ -123,7 +178,7 @@ namespace MyGame3D_0912100
 
         void mainMenu_NewGame(object sender, EventArgs e)
         {
-            stage = new Stage(Content, new GogetaSSJ4(Content, new Vector3(0, 0, 0)), new GokuSSJ2(Content, new Vector3(0, 10, 0)), null);
+            _Stage = new Stage(Content, new GogetaSSJ4(Content, new Vector3(0, 0, 0)), new GokuSSJ2(Content, new Vector3(0, 10, 0)), null);
             this._GameState = GAME_STATE.PLAYING;
             ResetGraphicsDeviceState();
         }
@@ -157,18 +212,20 @@ namespace MyGame3D_0912100
                                   new Vector2(320/2, 52/2)
                               };
 
-            mainMenu = new MainMenu(Content, texturePrefix, textures, positions, sizes);
+            _MainMenu = new MainMenu(Content, texturePrefix, textures, positions, sizes);
 
             string[] textures1 = {
                                     "Option",
                                     "SoundVolume",
                                     "Difficuty",
+                                    "Back",
                                     "Ball"
                                 };
             Vector3[] positions1 = {
                                      new Vector3(0, 50, 0),
                                      new Vector3(0, 0, 0),
                                      new Vector3(0, -35, 0),
+                                     new Vector3(0, -45, 0),
                                      new Vector3(55, 0, 0),
                                  };
 
@@ -177,9 +234,10 @@ namespace MyGame3D_0912100
                                   new Vector2(320/2, 52/2),
                                   new Vector2(320/2, 52/2),
                                   new Vector2(320/2, 52/2),
+                                  new Vector2(320/2, 52/2),
                                   new Vector2(15, 15)
                               };
-            this.optionMenus = new OptionMenu(Content, texturePrefix1, textures1, positions1, sizes1);
+            this._OptionMenus = new OptionMenu(Content, texturePrefix1, textures1, positions1, sizes1);
             this._camera = new PerspectiveCamera(
                 this.CAMERAPOSITION,
                 this.CAMERATARGET,
@@ -248,18 +306,26 @@ namespace MyGame3D_0912100
 
                 case GAME_STATE.MAIN_MENU:
                     {
-                        mainMenu.Update(gameTime, kbState, mouState);
+                        _MainMenu.Update(gameTime, kbState, mouState);
+                        if(MediaPlayer.State == MediaState.Stopped)
+                        {
+                            MediaPlayer.Play(this._Song);
+                        }
                         break;
                     }
                 case GAME_STATE.OPTION:
                     {
-                        this.optionMenus.Update(gameTime, kbState, mouState);
+                        if (MediaPlayer.State == MediaState.Stopped)
+                        {
+                            MediaPlayer.Play(this._Song);
+                        }
+                        this._OptionMenus.Update(gameTime, kbState, mouState);
                         break;
                     }
 
                 case GAME_STATE.PLAYING:
                     {
-                        stage.Update(gameTime, kbState, mouState);
+                        _Stage.Update(gameTime, kbState, mouState);
                         break;
                     }
 
@@ -294,17 +360,17 @@ namespace MyGame3D_0912100
                     }
                 case GAME_STATE.MAIN_MENU:
                     {
-                        mainMenu.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
+                        _MainMenu.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
                         break;
                     }
                 case GAME_STATE.OPTION:
                     {
-                        this.optionMenus.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera );
+                        this._OptionMenus.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera );
                         break;
                     }
                 case GAME_STATE.PLAYING:
                     {
-                        stage.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
+                        _Stage.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
                         break;
                     }
 
