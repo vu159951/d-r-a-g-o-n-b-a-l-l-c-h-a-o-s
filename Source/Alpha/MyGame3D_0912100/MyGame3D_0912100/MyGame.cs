@@ -137,9 +137,11 @@ namespace MyGame3D_0912100
 
         void _OptionMenus_UpVolume(object sender, EventArgs e)
         {
-            GAME_VOLUME += BASE_VOLUME;
-            if (GAME_VOLUME > 1.0f)
+            VOLUME += BASE_VOLUME;
+            if (VOLUME > 1.0f)
                 GAME_VOLUME = 1.0f;
+            else
+                GAME_VOLUME = VOLUME;
         }
 
         void _OptionMenus_DownVolume(object sender, EventArgs e)
