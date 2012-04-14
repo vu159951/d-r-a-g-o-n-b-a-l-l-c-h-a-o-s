@@ -125,6 +125,7 @@ namespace MyGame3D_0912100
         {
             stage = new Stage(Content, new GogetaSSJ4(Content, new Vector3(0, 0, 0)), new GokuSSJ2(Content, new Vector3(0, 10, 0)), null);
             this._GameState = GAME_STATE.PLAYING;
+            ResetGraphicsDeviceState();
         }
 
         /// <summary>
@@ -303,8 +304,6 @@ namespace MyGame3D_0912100
                     }
                 case GAME_STATE.PLAYING:
                     {
-                        GraphicsDevice.BlendState = BlendState.Opaque;
-                        GraphicsDevice.DepthStencilState = DepthStencilState.Default;
                         stage.Draw(gameTime, GraphicsDevice, spriteBatch, new BasicEffect(GraphicsDevice), _camera);
                         break;
                     }
@@ -314,6 +313,13 @@ namespace MyGame3D_0912100
             }
             //DrawCordinate();
             base.Draw(gameTime);
+        }
+
+        private void ResetGraphicsDeviceState()
+        {
+            GraphicsDevice.BlendState = BlendState.Opaque;
+            GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+            GraphicsDevice.SamplerStates[0] = SamplerState.LinearWrap;
         }
 
         private void DrawCordinate()
