@@ -33,8 +33,12 @@ namespace MyGame3D_0912100
 
 
         private const int MAX_VOLUME = 3;
-
         private const int MAX_DIFFICUTY = 3;
+        private const int MIN_VOLUME = 0;
+        private const int MIN_DIFFICUTY = 1;
+
+        private const int BALL_DISTANCE = 30;
+
 
         public event EventHandler BackToMainMenu;
         public event EventHandler DownVolume;
@@ -146,7 +150,7 @@ namespace MyGame3D_0912100
                 {
                     case 0:
                         {
-                            if (this._volume > 0)
+                            if (this._volume > MIN_VOLUME)
                             {
                                 this._volume--;
                                 this.DownVolume(this, null);
@@ -156,7 +160,7 @@ namespace MyGame3D_0912100
 
                     case 1:
                         {
-                            if (this._difficuty > 0)
+                            if (this._difficuty > MIN_DIFFICUTY)
                                 this._difficuty--;
                             break;
                         }
@@ -222,16 +226,18 @@ namespace MyGame3D_0912100
             //volume bar
             for(int i=0; i<_volume; i++)
             {
-                _PlanarPartOfBar.Position = new Vector3(_OriginalPositionBar.X + 25 * i, 
+                _PlanarPartOfBar.Position = new Vector3(_OriginalPositionBar.X + BALL_DISTANCE * i, 
                     _ButtonList[0].Position.Y, 0);
+                _PlanarPartOfBar.IsAnimate = true;
                 _PlanarPartOfBar.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
             }
 
             //difficuty bar
             for (int i = 0; i < _difficuty; i++)
             {
-                _PlanarPartOfBar.Position = new Vector3(_OriginalPositionBar.X + 25 * i, 
+                _PlanarPartOfBar.Position = new Vector3(_OriginalPositionBar.X + BALL_DISTANCE * i, 
                     _ButtonList[1].Position.Y, 0);
+                _PlanarPartOfBar.IsAnimate = true;
                 _PlanarPartOfBar.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
             }
         }
