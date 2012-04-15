@@ -22,7 +22,7 @@ namespace MyGame3D_0912100
         /// <summary>
         /// Camera parameter
         /// </summary>
-        private Vector3 CAMERAPOSITION = new Vector3(0, 0, 300); //vị trí cam
+        private Vector3 CAMERAPOSITION = new Vector3(0, -50, 300); //vị trí cam
         private Vector3 CAMERATARGET = new Vector3(0, 0, 0); //nhìn tới điểm đó
         private Vector3 CAMERAUPVECTOR = Vector3.Up;
         private float NEARPLANEDISTANCE = 10;
@@ -209,9 +209,9 @@ namespace MyGame3D_0912100
 
             string texturePrefix = "MainMenu\\";
             Vector2[] sizes = {
-                                  new Vector2(320/2, 52/2),
-                                  new Vector2(320/2, 52/2),
-                                  new Vector2(320/2, 52/2)
+                                  new Vector2(130, 60/2),
+                                  new Vector2(130, 60/2),
+                                  new Vector2(130, 60/2)
                               };
 
             _MainMenu = new MainMenu(Content, texturePrefix, textures, positions, sizes);
@@ -224,20 +224,20 @@ namespace MyGame3D_0912100
                                     "Ball"
                                 };
             Vector3[] positions1 = {
-                                     new Vector3(0, 50, 0),
-                                     new Vector3(0, 0, 0),
-                                     new Vector3(0, -35, 0),
-                                     new Vector3(0, -45, 0),
-                                     new Vector3(55, 0, 0),
+                                     new Vector3(0, 60, 0),
+                                     new Vector3(-40, 0, 0),
+                                     new Vector3(-40, -40, 0),
+                                     new Vector3(0, -80, 0),
+                                     new Vector3(35, 0, 0),
                                  };
 
             string texturePrefix1 = "OptionMenu\\";
             Vector2[] sizes1 = {
-                                  new Vector2(320/2, 52/2),
-                                  new Vector2(320/2, 52/2),
-                                  new Vector2(320/2, 52/2),
-                                  new Vector2(320/2, 52/2),
-                                  new Vector2(15, 15)
+                                  new Vector2(260/2, 52/2),
+                                  new Vector2(220/2, 52/2),
+                                  new Vector2(220/2, 52/2),
+                                  new Vector2(260/2, 52/2),
+                                  new Vector2(20, 30)
                               };
             this._OptionMenus = new OptionMenu(Content, texturePrefix1, textures1, positions1, sizes1);
             this._camera = new PerspectiveCamera(

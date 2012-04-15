@@ -25,6 +25,8 @@ namespace MyGame3D_0912100
 
         private Matrix _Rotation;
 
+        private Vector3 _AnimationAxis = Vector3.Up;
+
         private Effect MyEffect;
 
         private bool isAnimate = true;
@@ -74,7 +76,11 @@ namespace MyGame3D_0912100
         }
 
 
-
+        public Vector3 AnimationAxis
+        {
+            get { return _AnimationAxis; }
+            set { _AnimationAxis = value; }
+        }
 
 
         public Matrix Rotation
@@ -137,6 +143,10 @@ namespace MyGame3D_0912100
             }
         }
 
+        
+
+
+
         public void InitMyPlanarModel(Vector3[] vertices, Vector2[] textureCordinate)
         {
             this._Vertices = new VertexPositionTexture[vertices.Length];
@@ -152,8 +162,8 @@ namespace MyGame3D_0912100
 
             MyEffect.CurrentTechnique = MyEffect.Techniques["Technique1"];
             MyEffect.Parameters["World"].SetValue(Matrix.CreateScale(this.Scale)
-                                        * Matrix.CreateTranslation(this.Position)
-                                        * this.Rotation);
+                                        * this.Rotation
+                                        * Matrix.CreateTranslation(this.Position));
             MyEffect.Parameters["View"].SetValue(camera.View);
             MyEffect.Parameters["Projection"].SetValue(camera.Projection);
             MyEffect.Parameters["Texture"].SetValue(_Texture);
@@ -173,7 +183,10 @@ namespace MyGame3D_0912100
         public override void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)
         {
             if(this.IsAnimate)
-                this._Rotation = Matrix.CreateRotationY(MathHelper.ToRadians((float)gameTime.TotalGameTime.TotalMilliseconds / (float)gameTime.ElapsedGameTime.TotalMilliseconds));
+                //this._Rotation = Matrix.CreateTranslation(new Vector3(0, 0, 0)) * Matrix.CreateRotationY(MathHelper.ToRadians((float)gameTime.TotalGameTime.TotalMilliseconds / (float)gameTime.ElapsedGameTime.TotalMilliseconds));
+                this._Rotation = (Matrix.CreateTranslation(new Vector3(0, 0, 0)) * Matrix.CreateFromAxisAngle(AnimationAxis, MathHelper.ToRadians((float)gameTime.TotalGameTime.TotalMilliseconds / (float)gameTime.ElapsedGameTime.TotalMilliseconds)));
         }
+
+        
     }
 }
