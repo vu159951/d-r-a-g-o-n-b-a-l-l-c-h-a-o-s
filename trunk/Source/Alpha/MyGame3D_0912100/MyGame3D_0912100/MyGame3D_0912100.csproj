@@ -80,6 +80,7 @@
     <Compile Include="GokuSSJ2.cs" />
     <Compile Include="InvisibleGameEntity.cs" />
     <Compile Include="MainMenu.cs" />
+    <Compile Include="Map.cs" />
     <Compile Include="My2DSprite.cs" />
     <Compile Include="My3DModel.cs" />
     <Compile Include="My3DGameCharacter.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="OptionMenu.cs" />
     <Compile Include="Stage.cs" />
+    <Compile Include="Terrain.cs" />
     <Compile Include="UnFlyableCharacter.cs" />
     <Compile Include="VideoFrame.cs" />
     <Compile Include="VisibleGameEntity.cs" />

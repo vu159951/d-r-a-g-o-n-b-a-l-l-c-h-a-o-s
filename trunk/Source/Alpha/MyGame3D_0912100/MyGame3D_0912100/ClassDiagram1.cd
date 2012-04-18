@@ -45,7 +45,7 @@
   <Class Name="MyGame3D_0912100.MainMenu" Collapsed="true">
     <Position X="5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAUACAAAoAAAAgAAAAAACAAABCAABAAAAAgAAAAAAAA=</HashCode>
+      <HashCode>CAQACAAIIAAAEgAgAAAAKAAEBIAABgBAAAgAAAAAAAA=</HashCode>
       <FileName>MainMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -57,30 +57,30 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.My3DGameCharacter" Collapsed="true">
-    <Position X="11.75" Y="3.25" Width="1.5" />
+    <Position X="12.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgggAAAAgAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>My3DGameCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.My3DModel" Collapsed="true">
-    <Position X="2.5" Y="6.75" Width="1.5" />
+    <Position X="0.5" Y="10" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIQAAAAAAAAAAgAggAIAgAAAAAAAAAAAhAAAAAAAAIA=</HashCode>
+      <HashCode>AIQAAAAAAAAAAgAAgAAAAAAAAAAAAAAAhAAAAAAAAIA=</HashCode>
       <FileName>My3DModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.MyGame" Collapsed="true">
     <Position X="18.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAQQkNAAAAAIA0AAAAAAAIAEAhAAGAoQAQDAACAAAAQ=</HashCode>
+      <HashCode>ghQQkNAAgQAKA8AABACgAIAEBhAAQAoQAQBAACAAABQ=</HashCode>
       <FileName>MyGame.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.MyModel">
-    <Position X="4" Y="4.5" Width="1.5" />
+    <Position X="2.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAQAoAgAAIAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MyModel.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -101,7 +101,7 @@
   <Class Name="MyGame3D_0912100.Stage" Collapsed="true">
     <Position X="2.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAIAAAAAAgAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gAQAkBIAAAAgAgAAAAAAAAAEAABAAAIQAQBEAAAAAAA=</HashCode>
       <FileName>Stage.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -120,23 +120,23 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.MyVideoPlayer" Collapsed="true">
-    <Position X="13.75" Y="0.75" Width="1.5" />
+    <Position X="10.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAggAAAAABAAAAAAAFACAAgAEAAAAAAA=</HashCode>
       <FileName>MyVideoPlayer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.VideoFrame" Collapsed="true">
-    <Position X="8.5" Y="4.5" Width="1.5" />
+    <Position X="8.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAACAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>VideoFrame.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.PlanarModel" Collapsed="true">
-    <Position X="5" Y="6.75" Width="1.5" />
+    <Position X="2.5" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAIAQAQosQgAAIAhAIAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAEAIAQAAosQgAAIABAIAAAQAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>PlanarModel.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -148,7 +148,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MyGame3D_0912100.PlanarEntity" Collapsed="true">
-    <Position X="7" Y="3.5" Width="1.5" />
+    <Position X="7" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAEAAAgAAIQgAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PlanarEntity.cs</FileName>
@@ -157,8 +157,22 @@
   <Class Name="MyGame3D_0912100.OptionMenu" Collapsed="true">
     <Position X="6" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAUACAAAoAAAAgAAAAAACAAABCAABAAAAAgAAAAAAAA=</HashCode>
+      <HashCode>CSQAGBEAJAAAAgBgAAAAIAAACAAABBAAAEgAAAKAwIA=</HashCode>
       <FileName>OptionMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.TerrainModel">
+    <Position X="4.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAACAQAAAAAAQAAAAAA=</HashCode>
+      <FileName>Terrain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.Map">
+    <Position X="14.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Map.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

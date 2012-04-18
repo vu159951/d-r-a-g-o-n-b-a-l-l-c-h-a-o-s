@@ -17,13 +17,8 @@ namespace MyGame3D_0912100
 
         private Texture2D _Texture;
 
-        private float _Scale;
-
-        private Vector3 _Position;
-
         private Vector2 _Size;
 
-        private Matrix _Rotation;
 
         private Vector3 _AnimationAxis = Vector3.Up;
 
@@ -42,7 +37,7 @@ namespace MyGame3D_0912100
 
         public PlanarModel(ContentManager content, Texture2D texture, Vector2 size, float scale, Vector3 position, Matrix rotation)
         {
-            this._Texture = texture;
+                this._Texture = texture;
             InitInfomation(content, ref size, scale, ref position, ref rotation);
 
         }
@@ -142,10 +137,6 @@ namespace MyGame3D_0912100
                 this.isAnimate = value;
             }
         }
-
-        
-
-
 
         public void InitMyPlanarModel(Vector3[] vertices, Vector2[] textureCordinate)
         {

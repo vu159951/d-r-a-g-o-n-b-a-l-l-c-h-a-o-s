@@ -40,7 +40,7 @@ namespace MyGame3D_0912100
 
         private const float BASE_VOLUME = 1.0f / 3.0f;
 
-        private float VOLUME = 1.0f; //0.0f ~ 1.0f
+        private float VOLUME = 0.1f; //0.0f ~ 1.0f
         
 
         /// <summary>
