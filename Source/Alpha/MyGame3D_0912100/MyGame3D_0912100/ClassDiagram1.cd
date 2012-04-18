@@ -161,18 +161,18 @@
       <FileName>OptionMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="MyGame3D_0912100.TerrainModel">
-    <Position X="4.75" Y="10" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAACAQAAAAAAQAAAAAA=</HashCode>
-      <FileName>Terrain.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="MyGame3D_0912100.Map">
     <Position X="14.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyGame3D_0912100.TerrainModel">
+    <Position X="4.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAACAQAAAAAAQAAAAAA=</HashCode>
+      <FileName>Terrain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

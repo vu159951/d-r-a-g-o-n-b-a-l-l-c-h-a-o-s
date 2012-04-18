@@ -50,7 +50,7 @@ namespace MyGame3D_0912100
                 this.FARPLANEDISTANCE,
                 this.FIELDOFVIEW,
                 this.ASPECTRATIO);
-            _Map = new Map(content, "HeightMap", 1f, Vector3.Zero, Matrix.Identity);
+            _Map = new Map(content, "Map\\HeightMap", 1f, Vector3.Zero, Matrix.Identity);
         }
 
         public override void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)

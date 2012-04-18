@@ -40,6 +40,7 @@ Content\MainMenu\Title.xnb
 Content\OptionMenu\Back.xnb
 Content\MainMenu\New Game.xnb
 Content\MainMenu\Option.xnb
+Content\Map\HeightMap.xnb
 Content\TrailerVideo\Trailer.xnb
 Content\MainMenu\Start.xnb
 Content\MyEffect.xnb
@@ -73,7 +74,6 @@ Content\Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri__8.xnb
 Content\Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri__9.xnb
 Content\Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri__10.xnb
 Content\Gogeta4\-s 1.0 -1.0 1.0 Dolphin.exe_Fri__11.xnb
-Content\Map\HeightMap.xnb
 Content\TrailerVideo\Trailer.wmv
 Content\MainMenu\Start.wmv
 Content\MainMenu\SoundEff.wma

@@ -22,6 +22,8 @@ namespace MyGame3D_0912100
 
         private Vector2 _Size;
 
+        private VertexPositionColor[] _Vetices;
+
         public TerrainModel(ContentManager content, string heightMapTexture, float scale, Vector3 position, Matrix rotation)
         {
             this.Scale = scale;
@@ -30,13 +32,31 @@ namespace MyGame3D_0912100
             Texture2D textureTemp = content.Load<Texture2D>(heightMapTexture);
             _nCols = textureTemp.Width - 1;
             _nRows = textureTemp.Height - 1;
-            Vector3[] textureColors = new Vector3[textureTemp.Width * textureTemp.Height];
+            Color[] textureColors = new Color[textureTemp.Width * textureTemp.Height];
             textureTemp.GetData(textureColors);
-            Color[,] colors = new Color[textureTemp.Width, textureTemp.Height];
-            Color c = new Color();
-            for (int i = 0; i < textureTemp.Height; i++)
-                for (int j = 0; j < textureTemp.Width; j++) 
-                    colors[i, j] = new Color(textureColors[i * textureTemp.Height + textureTemp.Width]);
+            _nVetices = _nCols * _nRows * 6;
+            _Vetices = new VertexPositionColor[_nVetices];
+            /*
+             * --------->x
+             * A---B |
+             * |   | |
+             * D---C |
+             *       y
+             */
+            
+            for (int x = 0; x < textureTemp.Height; x++)
+                for (int z = 0; z < textureTemp.Width; z++)
+                {
+                    _Vetices[x*z + 1] = new VertexPositionColor(new Vector3(x, textureColors[x * textureTemp.Height + z * textureTemp.Width].R/6, z), Color.White); // A
+                    _Vetices[x * z + 1] = new VertexPositionColor(new Vector3(x + 1, textureColors[(x + 1)* textureTemp.Height + textureTemp.Width].R / 6, z), Color.White); //B
+                    _Vetices[x * z + 1] = new VertexPositionColor(new Vector3(x, textureColors[x * textureTemp.Height + textureTemp.Width].R / 6, z), Color.White); //C
+
+                    _Vetices[x * z + 1] = new VertexPositionColor(new Vector3(x, textureColors[x * textureTemp.Height + textureTemp.Width].R / 6, z), Color.White);
+                    _Vetices[x * z + 1] = new VertexPositionColor(new Vector3(x, textureColors[x * textureTemp.Height + textureTemp.Width].R / 6, z), Color.White);
+                    _Vetices[x * z + 1] = new VertexPositionColor(new Vector3(x, textureColors[x * textureTemp.Height + textureTemp.Width].R / 6, z), Color.White);
+
+
+                }
         }
     }
 }
