@@ -102,13 +102,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gogeta4\Gogeta4.fbx">
-      <Name>Gogeta4</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>SkinnedModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\SkinedModelPipeline\SkinedModelPipeline.csproj">
       <Project>{0C95B3D2-AC28-4C7C-BE87-CBDF302F9409}</Project>
       <Name>SkinedModelPipeline</Name>
@@ -305,6 +298,20 @@
   <ItemGroup>
     <Compile Include="MainMenu\Option.png">
       <Name>Option</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gogeta4\Gogeta4.fbx">
+      <Name>Gogeta4</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>SkinnedModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Map\HeightMap.jpg">
+      <Name>HeightMap</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

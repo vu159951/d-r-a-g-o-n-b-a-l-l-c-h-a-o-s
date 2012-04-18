@@ -85,8 +85,8 @@ namespace MyGame3D_0912100
 
             //Khoi tao
             _focusButton = 0;
-            _volume = 3;
-            _difficuty = 3;
+            _volume = 2;
+            _difficuty = 1;
         }
 
 

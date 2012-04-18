@@ -23,24 +23,25 @@ namespace MyGame3D_0912100
         private My3DGameCharacter _ComputerCharacter;
 
         private PlanarModel _Ground;
-        private Vector3 CAMERAPOSITION = new Vector3(0, -30, 5); //vị trí cam
+        private Vector3 CAMERAPOSITION = new Vector3(0, -30, 30); //vị trí cam
         private Vector3 CAMERATARGET = new Vector3(0, 0, 0); //nhìn tới điểm đó
         private Vector3 CAMERAUPVECTOR = Vector3.Up;
-        private float NEARPLANEDISTANCE = 10;
+        private float NEARPLANEDISTANCE = 1;
         private float FARPLANEDISTANCE = 1000;
         private float FIELDOFVIEW = MathHelper.PiOver4;
         private float ASPECTRATIO = 1;
 
         private Camera _Camera;
-        //private MAP //chua co map :D
+
+        private Map _Map;
 
         public Stage(ContentManager content, My3DGameCharacter playerCharacter, My3DGameCharacter computerCharacter, string MapName)
         {
-            _PlayerCharacter = playerCharacter;
-            _ComputerCharacter = computerCharacter;
+            //_PlayerCharacter = playerCharacter;
+            //_ComputerCharacter = computerCharacter;
 
-            _Ground = new PlanarModel(content, "Map\\Ground", new Vector2(50, 50), 1f, new Vector3(0, 0, 0), Matrix.Identity);
-            _Ground.IsAnimate = false;
+            //_Ground = new PlanarModel(content, "Map\\Ground", new Vector2(50, 50), 1f, new Vector3(0, 0, 0), Matrix.Identity);
+            //_Ground.IsAnimate = false;
             _Camera = new PerspectiveCamera(
                 this.CAMERAPOSITION,
                 this.CAMERATARGET,
@@ -49,13 +50,15 @@ namespace MyGame3D_0912100
                 this.FARPLANEDISTANCE,
                 this.FIELDOFVIEW,
                 this.ASPECTRATIO);
+            _Map = new Map(content, "HeightMap", 1f, Vector3.Zero, Matrix.Identity);
         }
 
         public override void Update(GameTime gameTime, KeyboardState kbs, MouseState ms)
         {
             //_PlayerCharacter.Update(gameTime, kbs, ms);
-            _ComputerCharacter.Update(gameTime, kbs, ms);
-            _Ground.Update(gameTime, kbs, ms);
+            //_ComputerCharacter.Update(gameTime, kbs, ms);
+            //_Ground.Update(gameTime, kbs, ms);
+            _Map.Update(gameTime, kbs, ms);
             Vector3 newCameraPos = _Camera.CameraPosition;
             if(kbs.IsKeyDown(Keys.Up))
             {
@@ -87,9 +90,10 @@ namespace MyGame3D_0912100
 
         public override void Draw(GameTime gameTime, GraphicsDevice graphicsDevice, SpriteBatch spriteBatch, Effect effect, Camera camera)
         {
-            _Ground.Draw(gameTime, graphicsDevice, spriteBatch, effect, _Camera);
+            //_Ground.Draw(gameTime, graphicsDevice, spriteBatch, effect, _Camera);
             //_PlayerCharacter.Draw(gameTime, graphicsDevice, spriteBatch, effect, _Camera);
-            _ComputerCharacter.Draw(gameTime, graphicsDevice, spriteBatch, effect, _Camera);
+            //_ComputerCharacter.Draw(gameTime, graphicsDevice, spriteBatch, effect, _Camera);
+            _Map.Draw(gameTime, graphicsDevice, spriteBatch, effect, camera);
             this.DrawCordinate(graphicsDevice);
         }
 
