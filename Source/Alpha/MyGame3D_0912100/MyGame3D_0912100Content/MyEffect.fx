@@ -6,14 +6,12 @@ texture Texture;
 sampler Sampler = sampler_state
 {
 	texture = <Texture>;
-	   MinFilter = Anisotropic; // Minification Filter
-   MagFilter =  Anisotropic; // Magnification Filter
-   MipFilter = linear; // Mip-mapping
-   AddressU = clamp; // Address Mode for U Coordinates
-   AddressV = clamp; // Address Mode for V Coordinates
+	MinFilter = Linear; // Minification Filter
+	MagFilter = Linear; // Magnification Filter
+	MipFilter = Linear; // Mip-mapping
+	AddressU = Clamp; // Address Mode for U Coordinates
+	AddressV = Clamp; // Address Mode for V Coordinates
 };
-
-
 
 struct VertexShaderInput
 {
@@ -48,16 +46,9 @@ VertexShaderOutput VertexShaderFunction(VertexShaderInput input)
 float4 PixelShaderFunction(VertexShaderOutput input) : COLOR0
 {
     // TODO: add your pixel shader code here.
-	float4 Color;
-	
-    Color = tex2D(Sampler, input.UV);
-	float temp1  = Color.r;
-	float temp2 = Color.g;
-	float temp3 = Color.b;
-	if(temp1 ==  0 && temp2 == 0 && temp3 == 0){
-	Color.a = 0;
-	}
-    return Color;
+	float4 color;
+	color = tex2D(Sampler, input.UV);
+    return color;
 }
 
 technique Technique1
@@ -65,9 +56,7 @@ technique Technique1
     pass Pass1
     {
         // TODO: set renderstates here.
-		AlphaBlendEnable = TRUE;
-        DestBlend = INVSRCALPHA;
-        SrcBlend = SRCALPHA;
+
         VertexShader = compile vs_2_0 VertexShaderFunction();
         PixelShader = compile ps_2_0 PixelShaderFunction();
     }

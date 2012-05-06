@@ -15,7 +15,20 @@ namespace MyGame3D_0912100
         private Dictionary<string, AnimationClip> _ListAnimation = new Dictionary<string, AnimationClip>();
         private AnimationPlayer _AnimationPlayer;
         private Matrix[] _Bones;
-        
+        private float _Scale = 1.0f;
+
+        public float Scale
+        {
+            get { return _Scale; }
+            set { _Scale = value; }
+        }
+        private Vector3 _Position;
+
+        public Vector3 Position
+        {
+            get { return _Position; }
+            set { _Position = value; }
+        }
 
         public My3DModel(ContentManager content, string modelName)
         {
@@ -60,7 +73,7 @@ namespace MyGame3D_0912100
                 foreach (SkinnedEffect eff in mesh.Effects)
                 {
                     eff.SetBoneTransforms(this._Bones);
-                    eff.World = this.Rotation * Matrix.CreateTranslation(Position);
+                    eff.World = Matrix.CreateTranslation(Position);
                     eff.View = camera.View;
                     eff.Projection = camera.Projection;
 

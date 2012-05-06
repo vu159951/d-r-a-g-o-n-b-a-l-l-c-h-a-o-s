@@ -80,7 +80,6 @@
     <Compile Include="GokuSSJ2.cs" />
     <Compile Include="InvisibleGameEntity.cs" />
     <Compile Include="MainMenu.cs" />
-    <Compile Include="Map.cs" />
     <Compile Include="My2DSprite.cs" />
     <Compile Include="My3DModel.cs" />
     <Compile Include="My3DGameCharacter.cs" />
@@ -96,7 +95,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="OptionMenu.cs" />
     <Compile Include="Stage.cs" />
-    <Compile Include="Terrain.cs" />
     <Compile Include="UnFlyableCharacter.cs" />
     <Compile Include="VideoFrame.cs" />
     <Compile Include="VisibleGameEntity.cs" />
@@ -147,9 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
